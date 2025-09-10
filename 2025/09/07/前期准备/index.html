@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87/image4.png">
 <meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87/image5.png">
 <meta property="article:published_time" content="2025-09-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-09-10T07:27:26.301Z">
+<meta property="article:modified_time" content="2025-09-10T08:03:29.030Z">
 <meta property="article:author" content="zzbear">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://zhazha-xiong.github.io/2025/09/07/%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87/image6.png">
@@ -398,7 +398,7 @@
 <p><strong>微信公众号后台接口控制器</strong>，主要用于与微信服务器进行对接，处理微信公众号的消息接收和事件响应。</p>
 </blockquote>
 <p>同时需要在<code>resources/application-dev.yml</code>下修改配置：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 微信公众号对接</span></span><br><span class="line"><span class="attr">weixin:</span></span><br><span class="line">  <span class="attr">config:</span></span><br><span class="line">    <span class="attr">originalid:</span> <span class="string">gh_56657af86cea</span></span><br><span class="line">    <span class="attr">token:</span> <span class="string">136z</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 微信公众号对接</span></span><br><span class="line"><span class="attr">weixin:</span></span><br><span class="line">  <span class="attr">config:</span></span><br><span class="line">    <span class="attr">originalid:</span> <span class="comment">#填写你的originalid</span></span><br><span class="line">    <span class="attr">token:</span> <span class="comment">#填写你的token</span></span><br></pre></td></tr></table></figure>
 
 <p>如果遇到<code>natapp</code>显示离线状态的情况，也要在<code>web</code>包下的<code>resources/application-dev.yml</code>将<code>port</code>修改为<code>8080</code></p>
 

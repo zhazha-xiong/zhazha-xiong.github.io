@@ -5461,7 +5461,7 @@ table table {
 }
 
 pre .comment {
-  color: #8e908c;
+  color: #5c6370;
 }
 
 pre .variable,
@@ -5476,7 +5476,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #c82829;
+  color: #e06c75;
 }
 
 pre .number,
@@ -5485,12 +5485,12 @@ pre .built_in,
 pre .literal,
 pre .params,
 pre .constant {
-  color: #f5871f;
+  color: #d19a66;
 }
 
 pre .ruby .class .title,
 pre .css .rules .attribute {
-  color: #718c00;
+  color: #98c379;
 }
 
 pre .string,
@@ -5499,12 +5499,12 @@ pre .inheritance,
 pre .header,
 pre .ruby .symbol,
 pre .xml .cdata {
-  color: #718c00;
+  color: #98c379;
 }
 
 pre .title,
 pre .css .hexcolor {
-  color: #3e999f;
+  color: #56b6c2;
 }
 
 pre .function,
@@ -5516,7 +5516,7 @@ pre .perl .sub,
 pre .javascript .title,
 pre .js .title,
 pre .coffeescript .title {
-  color: #4271ae;
+  color: #61afef;
 }
 
 pre .keyword,
@@ -5527,12 +5527,12 @@ pre .js .function {
 
 pre,
 .highlight {
-  background: #fafafa;
+  background: #282c34;
   margin: 10px 0;
   padding: 15px 10px;
   overflow: auto;
   font-size: 13px;
-  color: #4d4d4c;
+  color: #abb2bf;
   line-height: 1.5;
 }
 
@@ -5571,7 +5571,7 @@ pre code {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #f6f6f6;
+  background-color: #1e2128;
   padding: 0 10px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -5639,7 +5639,7 @@ pre code {
   text-align: right;
   padding-right: 0;
   padding-left: 0;
-  color: #ccc;
+  color: #5c6370;
 }
 
 /*

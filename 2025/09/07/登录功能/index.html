@@ -28,12 +28,12 @@
 <meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image.png">
 <meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image1.png">
 <meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image2.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/s_pay_mall_login_image3.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/s_pay_mall_login_image4.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/s_pay_mall_login_image5.png">
+<meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image3.png">
+<meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image4.png">
+<meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image5.png">
 <meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image6.png">
 <meta property="article:published_time" content="2025-09-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-09-10T07:10:40.549Z">
+<meta property="article:modified_time" content="2025-09-10T08:07:40.384Z">
 <meta property="article:author" content="zzbear">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image.png">
@@ -298,7 +298,7 @@
 <li>服务器使用<code>access token</code>作为参数调用微信服务器的API</li>
 <li>微信服务器返回<code>ticket</code>至服务器</li>
 <li>服务器将<code>ticket</code>传回给浏览器</li>
-<li>浏览器通过<code>ticket</code>拼接出图片URL(<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=xxx)%EF%BC%8C%E5%B9%B6%E6%98%BE%E7%A4%BA%E4%BA%8C%E7%BB%B4%E7%A0%81">https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=xxx)，并显示二维码</a></li>
+<li>浏览器通过<code>ticket</code>拼接出图片URL(<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=xxx">https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=xxx</a>)  ，并显示二维码</li>
 <li>用户扫描网页的二维码</li>
 <li>微信服务器回调配置好的回调地址，通知扫码事件，并在请求中携带<code>ticket</code>与扫码用户的<code>openid</code></li>
 <li>浏览器持续向服务器查询登录状态，参数为<code>ticket</code></li>
@@ -351,7 +351,8 @@
 <li>生成<code>Builder</code>内部类，包含各个字段的<code>setter</code>方法</li>
 <li>特别适合创建属性较多的对象，使代码更简洁、可读性更高</li>
 </ul>
-<h3 id="domain模块"><a href="#domain模块" class="headerlink" title="domain模块"></a>domain模块</h3><p><img src="/s_pay_mall_login_image3.png" alt="alt text"></p>
+<h3 id="domain模块"><a href="#domain模块" class="headerlink" title="domain模块"></a>domain模块</h3><img src="/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image3.png" class title="alt text">
+
 <p>domain包包含了以下四类：</p>
 <ol>
 <li><code>po/WeixinTemplateMessageVO.java</code> - 微信模板消息值对象</li>
@@ -360,13 +361,15 @@
 <li><code>res/WeixinTokenRes.java</code> - 微信AccessToken响应数据封装类</li>
 </ol>
 <p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/service/api/notify/template/api_sendtemplatemessage.html">发送模板消息</a><br><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/service/api/base/api_getaccesstoken.html">获取AccessToken</a><br><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/service/api/qrcode/qrcodes/api_createqrcode.html">生成带参的二维码</a></p>
-<h3 id="web模块"><a href="#web模块" class="headerlink" title="web模块"></a>web模块</h3><p><img src="/s_pay_mall_login_image4.png" alt="alt text"></p>
+<h3 id="web模块"><a href="#web模块" class="headerlink" title="web模块"></a>web模块</h3><img src="/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image4.png" class title="alt text">
+
 <p>关于 **<code>@configuration</code>**：用该注解修饰的类本身也是一个<code>Bean</code>，但它的主要职责是生产其他<code>Bean</code>，里面包含了用于定义和组装<code>Spring</code>容器中<code>Bean</code>的配置信息。<br><code>@Configuration</code>和<code>@Component</code>的区别：<br>关键在于<code>@Configuration</code>使用了<code>CGLIB</code>代理，保证了所有带有<code>@Bean</code>注解的方法都是单例的。</p>
 <p>其中<code>Guava</code>在本项目的主要作用是作为本地缓存缓存<code>AccessToken</code>和<code>OpenIdToken</code>，这里也可以用<code>Redis</code>替代。<br><code>Retrofit2</code>用于与微信API进行通信。</p>
 <p><strong>LoginController</strong><br><strong>类的作用</strong>：<code>LoginController</code>是项目中定义的登录控制器类，主要负责处理用户登录相关的请求。<br>内有两个方法<code>weixinQrCodeTicket()</code>生成微信二维码，以及<code>checkLogin()</code>用于检查登录状态。</p>
-<h3 id="service模块"><a href="#service模块" class="headerlink" title="service模块"></a>service模块</h3><p><img src="/s_pay_mall_login_image5.png" alt="alt text"></p>
+<h3 id="service模块"><a href="#service模块" class="headerlink" title="service模块"></a>service模块</h3><img src="/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image5.png" class title="alt text">
+
 <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>在<code>web</code>包下的<code>application-dev.yml</code>中，增加<code>teplate_id</code>字段：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 微信公众号对接</span></span><br><span class="line"><span class="attr">weixin:</span></span><br><span class="line">  <span class="attr">config:</span></span><br><span class="line">    <span class="attr">originalid:</span> <span class="string">gh_56657af86cea</span></span><br><span class="line">    <span class="attr">token:</span> <span class="string">136z</span></span><br><span class="line">    <span class="attr">app-id:</span> <span class="string">wx636faa052c1e5dfd</span></span><br><span class="line">    <span class="attr">app-secret:</span> <span class="string">965c2f4c459bf0980f36cef5c3891ffc</span></span><br><span class="line">    <span class="attr">template_id:</span> <span class="string">-hyctaeA1LZ-gygQMDs5f1rw2QeNJ6FzPSV84FQjXHg</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 微信公众号对接</span></span><br><span class="line"><span class="attr">weixin:</span></span><br><span class="line">  <span class="attr">config:</span></span><br><span class="line">    <span class="attr">originalid:</span> <span class="comment">#填写你的originalid</span></span><br><span class="line">    <span class="attr">token:</span> <span class="comment">#填写你的token</span></span><br><span class="line">    <span class="attr">app-id:</span> <span class="comment">#填写你的app-id</span></span><br><span class="line">    <span class="attr">app-secret:</span> <span class="comment">#填写你的app-secret</span></span><br><span class="line">    <span class="attr">template_id:</span> <span class="comment">#填写你的template_id</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><blockquote>
 <p>将本地缓存<code>Guava</code>修改为<code>Redis</code></p>
