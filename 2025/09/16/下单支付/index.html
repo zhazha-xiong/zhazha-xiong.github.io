@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/16/%E4%B8%8B%E5%8D%95%E6%94%AF%E4%BB%98/image.png">
 <meta property="article:published_time" content="2025-09-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-09-22T12:44:08.028Z">
+<meta property="article:modified_time" content="2025-09-23T00:45:17.465Z">
 <meta property="article:author" content="zzbear">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://zhazha-xiong.github.io/2025/09/16/%E4%B8%8B%E5%8D%95%E6%94%AF%E4%BB%98/image.png">
@@ -198,7 +198,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -210,6 +210,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" class="title">云服务器配置</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-10-12T13:04:00.000Z" itemprop="datePublished">2025-10-12</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -384,7 +399,7 @@
 <p>输出数据：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ProductVO</span> &#123;</span><br><span class="line">    <span class="comment">/** 商品ID */</span></span><br><span class="line">    <span class="keyword">private</span> String productId;</span><br><span class="line">    <span class="comment">/** 商品名称 */</span></span><br><span class="line">    <span class="keyword">private</span> String productName;</span><br><span class="line">    <span class="comment">/** 商品描述 */</span></span><br><span class="line">    <span class="keyword">private</span> String productDesc;</span><br><span class="line">    <span class="comment">/** 商品价格 */</span></span><br><span class="line">    <span class="keyword">private</span> BigDecimal price;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>数据流向：<code>OrderServiceImpl</code> → <code>ProductRPC</code> → <code>返回ProductVO对象</code></p>
+<p>数据流向：<code>OrderServiceImpl</code> -&gt; <code>ProductRPC</code> -&gt; <code>返回ProductVO对象</code></p>
 <h3 id="第四阶段：订单数据持久化"><a href="#第四阶段：订单数据持久化" class="headerlink" title="第四阶段：订单数据持久化"></a>第四阶段：订单数据持久化</h3><p>输入数据：</p>
 <ul>
 <li>userId：用户ID</li>
@@ -407,7 +422,7 @@
 <ul>
 <li>数据库中新增一条订单记录，状态为 <code>CREATE</code></li>
 </ul>
-<p>数据流向：<code>OrderServiceImpl</code> → <code>构造PayOrder对象</code> → <code>IOrderDao</code> → <code>MySQL数据库</code></p>
+<p>数据流向：<code>OrderServiceImpl</code> -&gt; <code>构造PayOrder对象</code> -&gt; <code>IOrderDao</code> -&gt; <code>MySQL数据库</code></p>
 <h3 id="第五阶段：支付单创建"><a href="#第五阶段：支付单创建" class="headerlink" title="第五阶段：支付单创建"></a>第五阶段：支付单创建</h3><p>输入数据：</p>
 <ul>
 <li>productId：商品ID</li>
@@ -434,7 +449,7 @@
 <ul>
 <li>支付宝返回HTML表单字符串，包含支付页面的完整HTML代码</li>
 </ul>
-<p>数据流向：<code>OrderServiceImpl</code> → <code>构造支付宝请求</code> → <code>支付宝SDK</code> → <code>支付宝服务器</code> → <code>返回支付表单</code></p>
+<p>数据流向：<code>OrderServiceImpl</code> -&gt; <code>构造支付宝请求</code> -&gt; <code>支付宝SDK</code> -&gt; <code>支付宝服务器</code> -&gt; <code>返回支付表单</code></p>
 <h3 id="第六阶段：更新订单支付信息"><a href="#第六阶段：更新订单支付信息" class="headerlink" title="第六阶段：更新订单支付信息"></a>第六阶段：更新订单支付信息</h3><p>输入数据：</p>
 <ul>
 <li>orderId：订单号</li>
@@ -455,7 +470,7 @@
 <ul>
 <li>数据库订单记录更新完成，状态变为 <code>PAY_WAIT</code>，包含支付链接</li>
 </ul>
-<p>数据流向：<code>OrderServiceImpl</code> → <code>构造更新对象</code> → <code>IOrderDao</code> → <code>MySQL数据库</code></p>
+<p>数据流向：<code>OrderServiceImpl</code> -&gt; <code>构造更新对象</code> -&gt; <code>IOrderDao</code> -&gt; <code>MySQL数据库</code></p>
 <h3 id="第七阶段：返回支付响应"><a href="#第七阶段：返回支付响应" class="headerlink" title="第七阶段：返回支付响应"></a>第七阶段：返回支付响应</h3><p>输入数据：</p>
 <ul>
 <li>orderId：订单号</li>
@@ -478,7 +493,7 @@
 <p><strong>输出数据（返回给前端）</strong>：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0000&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;info&quot;</span><span class="punctuation">:</span> <span class="string">&quot;调用成功&quot;</span><span class="punctuation">,</span> </span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&lt;html&gt;支付宝支付表单HTML代码&lt;/html&gt;&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<p>数据流向：<code>OrderServiceImpl</code> → <code>PayOrderRes</code> → <code>AliPayController</code> → <code>Response对象</code> → <code>前端页面</code></p>
+<p>数据流向：<code>OrderServiceImpl</code> -&gt; <code>PayOrderRes</code> -&gt; <code>AliPayController</code> -&gt; <code>Response对象</code> -&gt; <code>前端页面</code></p>
 <h3 id="第八阶段：用户支付操作"><a href="#第八阶段：用户支付操作" class="headerlink" title="第八阶段：用户支付操作"></a>第八阶段：用户支付操作</h3><p><strong>处理流程</strong>：</p>
 <ol>
 <li>前端接收到支付表单HTML</li>
@@ -486,7 +501,7 @@
 <li>用户在支付宝页面完成付款操作</li>
 <li>支付宝处理支付请求并扣款</li>
 </ol>
-<p>数据流向：<code>前端页面</code> → <code>用户操作</code> → <code>支付宝支付页面</code> → <code>支付宝服务器处理</code></p>
+<p>数据流向：<code>前端页面</code> -&gt; <code>用户操作</code> -&gt; <code>支付宝支付页面</code> -&gt; <code>支付宝服务器处理</code></p>
 <h3 id="第九阶段：支付回调处理"><a href="#第九阶段：支付回调处理" class="headerlink" title="第九阶段：支付回调处理"></a>第九阶段：支付回调处理</h3><p>输入数据（支付宝异步回调）：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST /api/v1/alipay/pay_notify</span><br></pre></td></tr></table></figure>
 
@@ -515,7 +530,7 @@
 <li>返回字符串 “false” 给支付宝（拒绝回调）</li>
 </ul>
 <p><strong>验证成功继续处理…</strong></p>
-<p>数据流向：<code>支付宝服务器</code> → <code>AliPayController.payNotify()</code> → <code>参数解析和验证</code></p>
+<p>数据流向：<code>支付宝服务器</code> -&gt; <code>AliPayController.payNotify()</code> -&gt; <code>参数解析和验证</code></p>
 <h3 id="第十阶段：订单状态更新"><a href="#第十阶段：订单状态更新" class="headerlink" title="第十阶段：订单状态更新"></a>第十阶段：订单状态更新</h3><p>输入数据：</p>
 <ul>
 <li>orderId：从回调参数 <code>out_trade_no</code> 获取</li>
@@ -536,7 +551,7 @@
 <li>数据库订单状态更新为 <code>PAY_SUCCESS</code></li>
 <li>设置支付时间为当前时间</li>
 </ul>
-<p>数据流向：<code>OrderServiceImpl</code> → <code>构造更新对象</code> → <code>IOrderDao</code> → <code>MySQL数据库</code></p>
+<p>数据流向：<code>OrderServiceImpl</code> -&gt; <code>构造更新对象</code> -&gt; <code>IOrderDao</code> -&gt; <code>MySQL数据库</code></p>
 <h3 id="第十一阶段：异步事件发布"><a href="#第十一阶段：异步事件发布" class="headerlink" title="第十一阶段：异步事件发布"></a>第十一阶段：异步事件发布</h3><p>输入数据：</p>
 <ul>
 <li>更新后的 <code>PayOrder</code> 对象</li>
@@ -557,18 +572,32 @@
 <li>用户通知推送</li>
 <li>返利处理等</li>
 </ul>
-<p>数据流向：<code>OrderServiceImpl</code> → <code>EventBus</code> → <code>OrderPaySuccessListener</code> → <code>后续业务处理</code></p>
+<p>数据流向：<code>OrderServiceImpl</code> -&gt; <code>EventBus</code> -&gt; <code>OrderPaySuccessListener</code> -&gt; <code>后续业务处理</code></p>
 <h3 id="第十二阶段：回调响应返回"><a href="#第十二阶段：回调响应返回" class="headerlink" title="第十二阶段：回调响应返回"></a>第十二阶段：回调响应返回</h3><p><strong>输出数据</strong>：</p>
 <ul>
 <li>向支付宝返回字符串 “success”（表示回调处理成功）</li>
 <li>记录日志：”支付回调，支付回调，更新订单 {}”</li>
 </ul>
-<p>数据流向：<code>AliPayController</code> → <code>支付宝服务器</code>（确认回调处理完成）</p>
+<p>数据流向：<code>AliPayController</code> -&gt; <code>支付宝服务器</code>（确认回调处理完成）</p>
 <h2 id="异步处理机制"><a href="#异步处理机制" class="headerlink" title="异步处理机制"></a>异步处理机制</h2><h3 id="定时任务处理"><a href="#定时任务处理" class="headerlink" title="定时任务处理"></a>定时任务处理</h3><p><strong>超时关单</strong>：</p>
 <ul>
 <li><code>TimeoutCloseOrderJob</code> 每10分钟执行一次</li>
 <li>查询超过30分钟未支付的订单：<code>queryTimeoutCloseOrderList()</code></li>
 <li>将订单状态更新为 <code>CLOSE</code></li>
+</ul>
+<p><strong>支付状态主动查询</strong>：</p>
+<ul>
+<li><code>NoPayNotifyOrderJob</code> 每3秒执行一次</li>
+<li>查询超过1分钟未支付且未收到回调的订单：<code>queryNoPayNotifyOrder()</code></li>
+<li>主动调用支付宝接口查询订单实际支付状态</li>
+<li>若支付成功则更新订单状态为 <code>PAY_SUCCESS</code></li>
+</ul>
+<h3 id="事件监听器"><a href="#事件监听器" class="headerlink" title="事件监听器"></a>事件监听器</h3><p><strong>支付成功事件监听</strong>：</p>
+<ul>
+<li><code>OrderPaySuccessListener</code> 基于Guava EventBus实现</li>
+<li>通过<code>@Subscribe</code>注解订阅支付成功事件</li>
+<li>接收JSON格式的订单信息</li>
+<li>负责处理支付成功后的异步业务逻辑（如商品发货、积分奖励等）</li>
 </ul>
 
       
@@ -624,6 +653,10 @@
   <div class="bar-inner">
   
   <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" title="云服务器配置"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
     
     
     <li class="next">
