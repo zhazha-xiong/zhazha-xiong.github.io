@@ -21,27 +21,27 @@
   <meta name="description" content="内容概述登录功能设计实现，以及涉及到的类设计与流程分析 流程分析  小傅哥版本流程图：     简略版本流程图：  核心流程：  用户点击登录，浏览器向服务器请求ticket 服务器检测是否缓存有有效的access token，如果没有则向微信服务器请求(请求需要appid和secret两个参数，这两个参数在微信公众平台可以查看)(生成access token：https:&#x2F;&#x2F;developers">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小型支付商城登录功能">
-<meta property="og:url" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/index.html">
+<meta property="og:url" content="https://www.zhazhabear.site/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/index.html">
 <meta property="og:site_name" content="渣渣熊窝">
 <meta property="og:description" content="内容概述登录功能设计实现，以及涉及到的类设计与流程分析 流程分析  小傅哥版本流程图：     简略版本流程图：  核心流程：  用户点击登录，浏览器向服务器请求ticket 服务器检测是否缓存有有效的access token，如果没有则向微信服务器请求(请求需要appid和secret两个参数，这两个参数在微信公众平台可以查看)(生成access token：https:&#x2F;&#x2F;developers">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image1.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image2.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image3.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image4.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image5.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image6.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image1.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image2.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image3.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image4.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image5.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image6.png">
 <meta property="article:published_time" content="2025-09-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-10-17T00:19:32.377Z">
+<meta property="article:modified_time" content="2025-10-17T01:03:47.879Z">
 <meta property="article:author" content="zzbear">
 <meta property="article:tag" content="项目学习">
 <meta property="article:tag" content="后端开发">
 <meta property="article:tag" content="微信登录">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image.png">
+<meta name="twitter:image" content="https://www.zhazhabear.site/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/s_pay_mall_login_image.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/index.html">
+  <link rel="canonical" href="https://www.zhazhabear.site/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/index.html">
   
   
     <link rel="icon" href="/images/favicon.png" type="image/x-icon">
@@ -480,7 +480,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://zhazha-xiong.github.io/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/" title="小型支付商城登录功能" target="_blank" rel="external">https://zhazha-xiong.github.io/2025/09/07/登录功能/</a>
+      <a href="https://www.zhazhabear.site/2025/09/07/%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/" title="小型支付商城登录功能" target="_blank" rel="external">https://www.zhazhabear.site/2025/09/07/登录功能/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -604,32 +604,8 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+   <!-- 注释掉评论系统脚本 -->
    
-    
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/valine"></script>
-  <script type="text/javascript">
-  var GUEST = ['nick', 'mail', 'link'];
-  var meta = 'nick,mail,link';
-  meta = meta.split(',').filter(function(item) {
-    return GUEST.indexOf(item) > -1;
-  });
-  new Valine({
-    el: '#vcomments',
-    verify: false,
-    notify: false,
-    appId: 'swBADAXomRWF8g8LKmyxIh8B-MdYXbMMI',
-    appKey: 'TZBCqXYgkeZAOxEGkc2sOOx7',
-    placeholder: 'Just go go',
-    avatar: 'mm',
-    meta: meta,
-    pageSize: '10' || 10,
-    visitor: false
-  });
-  </script>
-
-     
-
 
 
 

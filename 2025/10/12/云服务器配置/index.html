@@ -21,26 +21,26 @@
   <meta name="description" content="本节需求 购买并初始化云服务器，完成端口放通与 Docker&#x2F;Compose&#x2F;Portainer 安装，使用 docker compose 部署 AI Agent 运行所需的组件（Ollama、Redis、向量库），配置 JDK 17 与 Maven，并拉取 DeepSeek R1 1.5B 模型完成联通验证。  云服务要求AI Agent 至少需要 2C4G 的云服务器。阿里">
 <meta property="og:type" content="article">
 <meta property="og:title" content="云服务器配置">
-<meta property="og:url" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:url" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="渣渣熊窝">
 <meta property="og:description" content="本节需求 购买并初始化云服务器，完成端口放通与 Docker&#x2F;Compose&#x2F;Portainer 安装，使用 docker compose 部署 AI Agent 运行所需的组件（Ollama、Redis、向量库），配置 JDK 17 与 Maven，并拉取 DeepSeek R1 1.5B 模型完成联通验证。  云服务要求AI Agent 至少需要 2C4G 的云服务器。阿里">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-1.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-2.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-4.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-3.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-5.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-6.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-7.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-8.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-9.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-10.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-11.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-12.png">
-<meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-13.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-1.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-2.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-4.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-3.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-5.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-6.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-7.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-8.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-9.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-10.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-11.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-12.png">
+<meta property="og:image" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-13.png">
 <meta property="article:published_time" content="2025-10-12T13:04:00.000Z">
-<meta property="article:modified_time" content="2025-10-17T00:19:32.379Z">
+<meta property="article:modified_time" content="2025-10-17T01:03:47.873Z">
 <meta property="article:author" content="zzbear">
 <meta property="article:tag" content="项目学习">
 <meta property="article:tag" content="Docker">
@@ -49,9 +49,9 @@
 <meta property="article:tag" content="Redis">
 <meta property="article:tag" content="运维">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image.png">
+<meta name="twitter:image" content="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/index.html">
+  <link rel="canonical" href="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/index.html">
   
   
     <link rel="icon" href="/images/favicon.png" type="image/x-icon">
@@ -472,7 +472,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" title="云服务器配置" target="_blank" rel="external">https://zhazha-xiong.github.io/2025/10/12/云服务器配置/</a>
+      <a href="https://www.zhazhabear.site/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" title="云服务器配置" target="_blank" rel="external">https://www.zhazhabear.site/2025/10/12/云服务器配置/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -600,32 +600,8 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+   <!-- 注释掉评论系统脚本 -->
    
-    
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/valine"></script>
-  <script type="text/javascript">
-  var GUEST = ['nick', 'mail', 'link'];
-  var meta = 'nick,mail,link';
-  meta = meta.split(',').filter(function(item) {
-    return GUEST.indexOf(item) > -1;
-  });
-  new Valine({
-    el: '#vcomments',
-    verify: false,
-    notify: false,
-    appId: 'swBADAXomRWF8g8LKmyxIh8B-MdYXbMMI',
-    appKey: 'TZBCqXYgkeZAOxEGkc2sOOx7',
-    placeholder: 'Just go go',
-    avatar: 'mm',
-    meta: meta,
-    pageSize: '10' || 10,
-    visitor: false
-  });
-  </script>
-
-     
-
 
 
 
