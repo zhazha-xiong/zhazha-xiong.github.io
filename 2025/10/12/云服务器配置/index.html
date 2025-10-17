@@ -18,12 +18,12 @@
   
   
   <title>云服务器配置 | 渣渣熊窝</title>
-  <meta name="description" content="云服务要求AI Agent 至少需要 2C4G 的云服务器。阿里云学生优惠获取的2C2G服务器无法满足性能要求，因此建议购买新的实例以保证模型和服务的稳定运行。 腾讯云 4C4G 实例（79 元&#x2F;年），性价比较高。参考：腾讯云服务器4C4G   选择Ubuntu 24.04-LTS即可，不需要额外的应用镜像 环境配置1. 重置密码  这里需要给 root 用户重置密码。   2. 防火墙">
+  <meta name="description" content="本节需求 购买并初始化云服务器，完成端口放通与 Docker&#x2F;Compose&#x2F;Portainer 安装，使用 docker compose 部署 AI Agent 运行所需的组件（Ollama、Redis、向量库），配置 JDK 17 与 Maven，并拉取 DeepSeek R1 1.5B 模型完成联通验证。  云服务要求AI Agent 至少需要 2C4G 的云服务器。阿里">
 <meta property="og:type" content="article">
 <meta property="og:title" content="云服务器配置">
 <meta property="og:url" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="渣渣熊窝">
-<meta property="og:description" content="云服务要求AI Agent 至少需要 2C4G 的云服务器。阿里云学生优惠获取的2C2G服务器无法满足性能要求，因此建议购买新的实例以保证模型和服务的稳定运行。 腾讯云 4C4G 实例（79 元&#x2F;年），性价比较高。参考：腾讯云服务器4C4G   选择Ubuntu 24.04-LTS即可，不需要额外的应用镜像 环境配置1. 重置密码  这里需要给 root 用户重置密码。   2. 防火墙">
+<meta property="og:description" content="本节需求 购买并初始化云服务器，完成端口放通与 Docker&#x2F;Compose&#x2F;Portainer 安装，使用 docker compose 部署 AI Agent 运行所需的组件（Ollama、Redis、向量库），配置 JDK 17 与 Maven，并拉取 DeepSeek R1 1.5B 模型完成联通验证。  云服务要求AI Agent 至少需要 2C4G 的云服务器。阿里">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image.png">
 <meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-1.png">
@@ -40,8 +40,14 @@
 <meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-12.png">
 <meta property="og:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image-13.png">
 <meta property="article:published_time" content="2025-10-12T13:04:00.000Z">
-<meta property="article:modified_time" content="2025-10-15T11:07:04.997Z">
+<meta property="article:modified_time" content="2025-10-17T00:19:32.379Z">
 <meta property="article:author" content="zzbear">
+<meta property="article:tag" content="项目学习">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Portainer">
+<meta property="article:tag" content="Ollama">
+<meta property="article:tag" content="Redis">
+<meta property="article:tag" content="运维">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://zhazha-xiong.github.io/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image.png">
   <!-- Canonical links -->
@@ -200,12 +206,33 @@
 
     
       
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E5%9E%8B%E6%94%AF%E4%BB%98%E5%95%86%E5%9F%8E%E5%AD%A6%E4%B9%A0/">小型支付商城学习</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
 
     
       
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Natapp/" rel="tag">Natapp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ollama/" rel="tag">Ollama</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Portainer/" rel="tag">Portainer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/" rel="tag">前端页面</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" rel="tag">后端开发</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95/" rel="tag">微信登录</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%B2%99%E7%AE%B1/" rel="tag">支付宝沙箱</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" rel="tag">项目学习</a><span class="tag-list-count">6</span></li></ul>
+    </div>
+  </div>
+
 
     
       
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Docker/" style="font-size: 13px;">Docker</a> <a href="/tags/Natapp/" style="font-size: 13px;">Natapp</a> <a href="/tags/Ollama/" style="font-size: 13px;">Ollama</a> <a href="/tags/Portainer/" style="font-size: 13px;">Portainer</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/" style="font-size: 13px;">前端页面</a> <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 13.5px;">后端开发</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95/" style="font-size: 13px;">微信登录</a> <a href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%B2%99%E7%AE%B1/" style="font-size: 13px;">支付宝沙箱</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 13px;">运维</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" style="font-size: 14px;">项目学习</a>
+    </div>
+  </div>
+
     
       
   <div class="widget">
@@ -227,7 +254,7 @@
             
             <div class="item-inner">
               <p class="item-category">
-                
+                <a class="category-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a>
               </p>
               <p class="item-title">
                 <a href="/2025/10/15/Ollama%E6%B5%81%E5%BC%8F%E5%BA%94%E7%AD%94%E6%8E%A5%E5%8F%A3%E9%A1%B5%E9%9D%A2%E5%AF%B9%E6%8E%A5/" class="title">Ollama流式应答接口页面对接</a>
@@ -242,7 +269,7 @@
             
             <div class="item-inner">
               <p class="item-category">
-                
+                <a class="category-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a>
               </p>
               <p class="item-title">
                 <a href="/2025/10/15/Ollama%E6%B5%81%E5%BC%8F%E5%BA%94%E7%AD%94%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/" class="title">Ollama流式应答接口实现</a>
@@ -257,7 +284,7 @@
             
             <div class="item-inner">
               <p class="item-category">
-                
+                <a class="category-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a>
               </p>
               <p class="item-title">
                 <a href="/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" class="title">云服务器配置</a>
@@ -272,7 +299,7 @@
             
             <div class="item-inner">
               <p class="item-category">
-                
+                <a class="category-link" href="/categories/%E5%B0%8F%E5%9E%8B%E6%94%AF%E4%BB%98%E5%95%86%E5%9F%8E%E5%AD%A6%E4%B9%A0/">小型支付商城学习</a>
               </p>
               <p class="item-title">
                 <a href="/2025/09/16/%E4%B8%8B%E5%8D%95%E6%94%AF%E4%BB%98/" class="title">小型支付商城下单支付</a>
@@ -287,7 +314,7 @@
             
             <div class="item-inner">
               <p class="item-category">
-                
+                <a class="category-link" href="/categories/%E5%B0%8F%E5%9E%8B%E6%94%AF%E4%BB%98%E5%95%86%E5%9F%8E%E5%AD%A6%E4%B9%A0/">小型支付商城学习</a>
               </p>
               <p class="item-title">
                 <a href="/2025/09/07/%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87/" class="title">小型支付商城前期准备</a>
@@ -331,7 +358,17 @@
 	</a>
 </span>
         
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a>
+  </span>
+
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Docker/" rel="tag">Docker</a>, <a class="article-tag-link-link" href="/tags/Ollama/" rel="tag">Ollama</a>, <a class="article-tag-link-link" href="/tags/Portainer/" rel="tag">Portainer</a>, <a class="article-tag-link-link" href="/tags/Redis/" rel="tag">Redis</a>, <a class="article-tag-link-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a>, <a class="article-tag-link-link" href="/tags/%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" rel="tag">项目学习</a>
+  </span>
+
 
         
 
@@ -341,7 +378,10 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="云服务要求"><a href="#云服务要求" class="headerlink" title="云服务要求"></a>云服务要求</h2><p>AI Agent 至少需要 2C4G 的云服务器。阿里云学生优惠获取的2C2G服务器无法满足性能要求，因此建议购买新的实例以保证模型和服务的稳定运行。</p>
+        <h2 id="本节需求"><a href="#本节需求" class="headerlink" title="本节需求"></a>本节需求</h2><blockquote>
+<p>购买并初始化云服务器，完成端口放通与 Docker&#x2F;Compose&#x2F;Portainer 安装，使用 docker compose 部署 AI Agent 运行所需的组件（Ollama、Redis、向量库），配置 JDK 17 与 Maven，并拉取 DeepSeek R1 1.5B 模型完成联通验证。</p>
+</blockquote>
+<h2 id="云服务要求"><a href="#云服务要求" class="headerlink" title="云服务要求"></a>云服务要求</h2><p>AI Agent 至少需要 2C4G 的云服务器。阿里云学生优惠获取的2C2G服务器无法满足性能要求，因此建议购买新的实例以保证模型和服务的稳定运行。</p>
 <p>腾讯云 4C4G 实例（79 元&#x2F;年），性价比较高。参考：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/act/pro/warmup202506">腾讯云服务器4C4G</a></p>
 <img src="/2025/10/12/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/image.png" class title="alt text">
 
