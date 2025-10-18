@@ -18,19 +18,19 @@
   
   
   <title>小型支付商城下单支付 | 渣渣熊窝</title>
-  <meta name="description" content="内容概述下单功能以及支付功能的完整实现 流程图  流程分析graph TB     subgraph &quot;前端层&quot;         A[用户界面] --&gt; B[HTTP请求]     end          subgraph &quot;Web层 (s-pay-mall-web)&quot;         B --&gt; C[AliPayController]         C --&gt; D[参数验证]     end">
+  <meta name="description" content="内容概述 下单功能以及支付功能的完整实现  流程图   流程分析 graph TB     subgraph &quot;前端层&quot;         A[用户界面] --&gt; B[HTTP请求]     end          subgraph &quot;Web层 (s-pay-mall-web)&quot;         B --&gt; C[AliPayController]         C --&gt; D[参数验证]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小型支付商城下单支付">
 <meta property="og:url" content="https://www.zhazhabear.site/2025/09/16/%E4%B8%8B%E5%8D%95%E6%94%AF%E4%BB%98/index.html">
 <meta property="og:site_name" content="渣渣熊窝">
-<meta property="og:description" content="内容概述下单功能以及支付功能的完整实现 流程图  流程分析graph TB     subgraph &quot;前端层&quot;         A[用户界面] --&gt; B[HTTP请求]     end          subgraph &quot;Web层 (s-pay-mall-web)&quot;         B --&gt; C[AliPayController]         C --&gt; D[参数验证]     end">
+<meta property="og:description" content="内容概述 下单功能以及支付功能的完整实现  流程图   流程分析 graph TB     subgraph &quot;前端层&quot;         A[用户界面] --&gt; B[HTTP请求]     end          subgraph &quot;Web层 (s-pay-mall-web)&quot;         B --&gt; C[AliPayController]         C --&gt; D[参数验证]">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.zhazhabear.site/2025/09/16/%E4%B8%8B%E5%8D%95%E6%94%AF%E4%BB%98/image.png">
 <meta property="article:published_time" content="2025-09-15T16:00:00.000Z">
 <meta property="article:modified_time" content="2025-10-17T01:03:47.877Z">
 <meta property="article:author" content="zzbear">
-<meta property="article:tag" content="后端开发">
 <meta property="article:tag" content="项目学习">
+<meta property="article:tag" content="后端开发">
 <meta property="article:tag" content="支付宝沙箱">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.zhazhabear.site/2025/09/16/%E4%B8%8B%E5%8D%95%E6%94%AF%E4%BB%98/image.png">
@@ -362,10 +362,12 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="内容概述"><a href="#内容概述" class="headerlink" title="内容概述"></a>内容概述</h2><p>下单功能以及支付功能的完整实现</p>
-<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><img src="/2025/09/16/%E4%B8%8B%E5%8D%95%E6%94%AF%E4%BB%98/image.png" class title="alt text">
-
-<h2 id="流程分析"><a href="#流程分析" class="headerlink" title="流程分析"></a>流程分析</h2><pre class="mermaid">graph TB
+        <h2 id="内容概述"><a class="markdownIt-Anchor" href="#内容概述"></a> 内容概述</h2>
+<p>下单功能以及支付功能的完整实现</p>
+<h2 id="流程图"><a class="markdownIt-Anchor" href="#流程图"></a> 流程图</h2>
+<img src="/2025/09/16/%E4%B8%8B%E5%8D%95%E6%94%AF%E4%BB%98/image.png" class title="alt text">
+<h2 id="流程分析"><a class="markdownIt-Anchor" href="#流程分析"></a> 流程分析</h2>
+<pre class="mermaid">graph TB
     subgraph "前端层"
         A[用户界面] --> B[HTTP请求]
     end
@@ -397,19 +399,18 @@
         L --> M[OrderPaySuccessListener]
         N[定时任务] --> E
     end</pre>
-
-<h3 id="第一阶段：用户下单请求"><a href="#第一阶段：用户下单请求" class="headerlink" title="第一阶段：用户下单请求"></a>第一阶段：用户下单请求</h3><p>输入数据：</p>
+<h3 id="第一阶段用户下单请求"><a class="markdownIt-Anchor" href="#第一阶段用户下单请求"></a> 第一阶段：用户下单请求</h3>
+<p>输入数据：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">POST /api/v1/alipay/create_pay_order</span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;userId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;10001&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;productId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;100001&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
 <p><strong>处理流程</strong>：</p>
 <ol>
 <li>前端发送 HTTP POST 请求到<code>AliPayController.createPayOrder()</code></li>
 <li>Controller 接收 <code>ShopCartReq</code> 对象，包含用户ID和商品ID</li>
 </ol>
 <p>数据流向：<code>前端请求</code> -&gt; <code>AliPayController</code> -&gt; <code>参数验证</code></p>
-<h3 id="第二阶段：重复订单检查"><a href="#第二阶段：重复订单检查" class="headerlink" title="第二阶段：重复订单检查"></a>第二阶段：重复订单检查</h3><p>输入数据：<code>ShopCartReq</code>对象：</p>
+<h3 id="第二阶段重复订单检查"><a class="markdownIt-Anchor" href="#第二阶段重复订单检查"></a> 第二阶段：重复订单检查</h3>
+<p>输入数据：<code>ShopCartReq</code>对象：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ShopCartReq</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String userId;</span><br><span class="line">    <span class="keyword">private</span> String productId;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><strong>处理流程</strong>：</p>
 <ol>
 <li><code>OrderServiceImpl.createOrder()</code> 被调用</li>
@@ -417,39 +418,43 @@
 <li>调用 <code>IOrderDao.queryUnPayOrder()</code> 查询数据库</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PayOrder</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String userId;</span><br><span class="line">    <span class="keyword">private</span> String productId;</span><br><span class="line">    <span class="keyword">private</span> String productName;</span><br><span class="line">    <span class="keyword">private</span> String orderId;</span><br><span class="line">    <span class="keyword">private</span> Date orderTime;</span><br><span class="line">    <span class="keyword">private</span> BigDecimal totalAmount;</span><br><span class="line">    <span class="keyword">private</span> String status;</span><br><span class="line">    <span class="keyword">private</span> String payUrl;</span><br><span class="line">    <span class="keyword">private</span> Date payTime;</span><br><span class="line">    <span class="keyword">private</span> Date createTime;</span><br><span class="line">    <span class="keyword">private</span> Date updateTime;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><strong>可能的情况：</strong></p>
 <ol>
-<li>返回状态为 <code>PAY_WAIT</code> 的未支付订单<ul>
+<li>返回状态为 <code>PAY_WAIT</code> 的未支付订单
+<ul>
 <li>直接返回现有的 PayOrderRes{orderId, payUrl}</li>
 <li>流程结束，跳转到返回响应阶段</li>
 </ul>
 </li>
-<li>返回状态为 <code>CREATE</code> 的订单<ul>
+<li>返回状态为 <code>CREATE</code> 的订单
+<ul>
 <li>需要重新创建支付单</li>
 <li>调用 <code>doPrepayOrder()</code> 方法创建支付单</li>
 <li>跳转到支付单创建阶段</li>
 </ul>
 </li>
-<li>返回 null（无相关订单）<ul>
+<li>返回 null（无相关订单）
+<ul>
 <li>继续执行后续流程</li>
 </ul>
 </li>
 </ol>
 <p>数据流向：<code>OrderServiceImpl</code> -&gt; <code>IOrderDao</code> -&gt; <code>MySQL数据库</code> -&gt; <code>返回查询结果</code></p>
-<h3 id="第三阶段：商品信息查询"><a href="#第三阶段：商品信息查询" class="headerlink" title="第三阶段：商品信息查询"></a>第三阶段：商品信息查询</h3><p>输入数据：<code>productId</code>（String 类型）</p>
+<h3 id="第三阶段商品信息查询"><a class="markdownIt-Anchor" href="#第三阶段商品信息查询"></a> 第三阶段：商品信息查询</h3>
+<p>输入数据：<code>productId</code>（String 类型）</p>
 <p><strong>处理流程</strong>：</p>
 <ol>
-<li>调用 <code>ProductRPC.queryProductByProductId()</code><ul>
+<li>调用 <code>ProductRPC.queryProductByProductId()</code>
+<ul>
 <li>这是一个模拟的RPC调用，实际返回固定的商品信息</li>
 </ul>
 </li>
 </ol>
 <p>输出数据：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ProductVO</span> &#123;</span><br><span class="line">    <span class="comment">/** 商品ID */</span></span><br><span class="line">    <span class="keyword">private</span> String productId;</span><br><span class="line">    <span class="comment">/** 商品名称 */</span></span><br><span class="line">    <span class="keyword">private</span> String productName;</span><br><span class="line">    <span class="comment">/** 商品描述 */</span></span><br><span class="line">    <span class="keyword">private</span> String productDesc;</span><br><span class="line">    <span class="comment">/** 商品价格 */</span></span><br><span class="line">    <span class="keyword">private</span> BigDecimal price;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>数据流向：<code>OrderServiceImpl</code> -&gt; <code>ProductRPC</code> -&gt; <code>返回ProductVO对象</code></p>
-<h3 id="第四阶段：订单数据持久化"><a href="#第四阶段：订单数据持久化" class="headerlink" title="第四阶段：订单数据持久化"></a>第四阶段：订单数据持久化</h3><p>输入数据：</p>
+<h3 id="第四阶段订单数据持久化"><a class="markdownIt-Anchor" href="#第四阶段订单数据持久化"></a> 第四阶段：订单数据持久化</h3>
+<p>输入数据：</p>
 <ul>
 <li>userId：用户ID</li>
 <li>productId：商品ID</li>
@@ -462,7 +467,6 @@
 <li>构造 <code>PayOrder</code> 对象：</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">PayOrder.builder()</span><br><span class="line">  .userId(<span class="string">&quot;10001&quot;</span>)</span><br><span class="line">  .productId(<span class="string">&quot;100001&quot;</span>) </span><br><span class="line">  .productName(<span class="string">&quot;new product&quot;</span>)</span><br><span class="line">  .orderId(<span class="string">&quot;1234567890123456&quot;</span>) <span class="comment">// 16位随机数</span></span><br><span class="line">  .totalAmount(<span class="keyword">new</span> <span class="title class_">BigDecimal</span>(<span class="string">&quot;1.68&quot;</span>))</span><br><span class="line">  .orderTime(<span class="keyword">new</span> <span class="title class_">Date</span>())</span><br><span class="line">  .status(<span class="string">&quot;CREATE&quot;</span>) <span class="comment">// 使用Constants.OrderStatusEnum.CREATE.getCode()</span></span><br><span class="line">  .build()</span><br></pre></td></tr></table></figure>
-
 <ol start="3">
 <li>调用 <code>IOrderDao.insert()</code> 插入数据库</li>
 <li>执行SQL：<code>INSERT INTO pay_order(...) VALUES(...)</code></li>
@@ -472,7 +476,8 @@
 <li>数据库中新增一条订单记录，状态为 <code>CREATE</code></li>
 </ul>
 <p>数据流向：<code>OrderServiceImpl</code> -&gt; <code>构造PayOrder对象</code> -&gt; <code>IOrderDao</code> -&gt; <code>MySQL数据库</code></p>
-<h3 id="第五阶段：支付单创建"><a href="#第五阶段：支付单创建" class="headerlink" title="第五阶段：支付单创建"></a>第五阶段：支付单创建</h3><p>输入数据：</p>
+<h3 id="第五阶段支付单创建"><a class="markdownIt-Anchor" href="#第五阶段支付单创建"></a> 第五阶段：支付单创建</h3>
+<p>输入数据：</p>
 <ul>
 <li>productId：商品ID</li>
 <li>productName：商品名称</li>
@@ -485,12 +490,10 @@
 <li>创建支付宝请求对象：</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">AlipayTradePagePayRequest</span> <span class="variable">request</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AlipayTradePagePayRequest</span>();</span><br><span class="line">request.setNotifyUrl(notifyUrl); <span class="comment">// 异步回调地址</span></span><br><span class="line">request.setReturnUrl(returnUrl); <span class="comment">// 同步跳转地址</span></span><br></pre></td></tr></table></figure>
-
 <ol start="3">
 <li>构造业务参数：</li>
 </ol>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;out_trade_no&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1234567890123456&quot;</span><span class="punctuation">,</span> <span class="comment">// 商户订单号</span></span><br><span class="line">  <span class="attr">&quot;total_amount&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.68&quot;</span><span class="punctuation">,</span>             <span class="comment">// 订单金额</span></span><br><span class="line">  <span class="attr">&quot;subject&quot;</span><span class="punctuation">:</span> <span class="string">&quot;new product&quot;</span><span class="punctuation">,</span>           <span class="comment">// 订单标题</span></span><br><span class="line">  <span class="attr">&quot;product_code&quot;</span><span class="punctuation">:</span> <span class="string">&quot;FAST_INSTANT_TRADE_PAY&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
 <ol start="4">
 <li>调用支付宝SDK：<code>alipayClient.pageExecute(request).getBody()</code></li>
 </ol>
@@ -499,7 +502,8 @@
 <li>支付宝返回HTML表单字符串，包含支付页面的完整HTML代码</li>
 </ul>
 <p>数据流向：<code>OrderServiceImpl</code> -&gt; <code>构造支付宝请求</code> -&gt; <code>支付宝SDK</code> -&gt; <code>支付宝服务器</code> -&gt; <code>返回支付表单</code></p>
-<h3 id="第六阶段：更新订单支付信息"><a href="#第六阶段：更新订单支付信息" class="headerlink" title="第六阶段：更新订单支付信息"></a>第六阶段：更新订单支付信息</h3><p>输入数据：</p>
+<h3 id="第六阶段更新订单支付信息"><a class="markdownIt-Anchor" href="#第六阶段更新订单支付信息"></a> 第六阶段：更新订单支付信息</h3>
+<p>输入数据：</p>
 <ul>
 <li>orderId：订单号</li>
 <li>payUrl：支付宝返回的HTML表单</li>
@@ -510,7 +514,6 @@
 <li>构造更新对象：</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">PayOrder</span> <span class="variable">payOrder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PayOrder</span>();</span><br><span class="line">payOrder.setOrderId(<span class="string">&quot;1234567890123456&quot;</span>);</span><br><span class="line">payOrder.setPayUrl(<span class="string">&quot;&lt;html&gt;支付表单内容&lt;/html&gt;&quot;</span>);</span><br><span class="line">payOrder.setStatus(<span class="string">&quot;PAY_WAIT&quot;</span>);</span><br></pre></td></tr></table></figure>
-
 <ol start="2">
 <li>调用 <code>IOrderDao.updateOrderPayInfo()</code></li>
 <li>执行SQL：<code>UPDATE pay_order SET pay_url = ?, status = ?, update_time = now() WHERE order_id = ?</code></li>
@@ -520,7 +523,8 @@
 <li>数据库订单记录更新完成，状态变为 <code>PAY_WAIT</code>，包含支付链接</li>
 </ul>
 <p>数据流向：<code>OrderServiceImpl</code> -&gt; <code>构造更新对象</code> -&gt; <code>IOrderDao</code> -&gt; <code>MySQL数据库</code></p>
-<h3 id="第七阶段：返回支付响应"><a href="#第七阶段：返回支付响应" class="headerlink" title="第七阶段：返回支付响应"></a>第七阶段：返回支付响应</h3><p>输入数据：</p>
+<h3 id="第七阶段返回支付响应"><a class="markdownIt-Anchor" href="#第七阶段返回支付响应"></a> 第七阶段：返回支付响应</h3>
+<p>输入数据：</p>
 <ul>
 <li>orderId：订单号</li>
 <li>payUrl：支付链接</li>
@@ -530,20 +534,18 @@
 <li>构造响应对象：</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PayOrderRes.builder()</span><br><span class="line">  .orderId(<span class="string">&quot;1234567890123456&quot;</span>)</span><br><span class="line">  .payUrl(<span class="string">&quot;&lt;html&gt;支付表单&lt;/html&gt;&quot;</span>)</span><br><span class="line">  .build()</span><br></pre></td></tr></table></figure>
-
 <ol start="2">
 <li>在Controller层包装成统一响应格式：</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Response.&lt;String&gt;builder()</span><br><span class="line">  .code(<span class="string">&quot;0000&quot;</span>)           <span class="comment">// Constants.ResponseCode.SUCCESS.getCode()</span></span><br><span class="line">  .info(<span class="string">&quot;调用成功&quot;</span>)        <span class="comment">// Constants.ResponseCode.SUCCESS.getInfo()  </span></span><br><span class="line">  .data(payOrderRes.getPayUrl())</span><br><span class="line">  .build()</span><br></pre></td></tr></table></figure>
-
 <ol start="3">
-<li>记录成功日志：”商品下单，根据商品ID创建支付单完成”</li>
+<li>记录成功日志：“商品下单，根据商品ID创建支付单完成”</li>
 </ol>
 <p><strong>输出数据（返回给前端）</strong>：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0000&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;info&quot;</span><span class="punctuation">:</span> <span class="string">&quot;调用成功&quot;</span><span class="punctuation">,</span> </span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&lt;html&gt;支付宝支付表单HTML代码&lt;/html&gt;&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
 <p>数据流向：<code>OrderServiceImpl</code> -&gt; <code>PayOrderRes</code> -&gt; <code>AliPayController</code> -&gt; <code>Response对象</code> -&gt; <code>前端页面</code></p>
-<h3 id="第八阶段：用户支付操作"><a href="#第八阶段：用户支付操作" class="headerlink" title="第八阶段：用户支付操作"></a>第八阶段：用户支付操作</h3><p><strong>处理流程</strong>：</p>
+<h3 id="第八阶段用户支付操作"><a class="markdownIt-Anchor" href="#第八阶段用户支付操作"></a> 第八阶段：用户支付操作</h3>
+<p><strong>处理流程</strong>：</p>
 <ol>
 <li>前端接收到支付表单HTML</li>
 <li>用户浏览器渲染支付页面</li>
@@ -551,14 +553,14 @@
 <li>支付宝处理支付请求并扣款</li>
 </ol>
 <p>数据流向：<code>前端页面</code> -&gt; <code>用户操作</code> -&gt; <code>支付宝支付页面</code> -&gt; <code>支付宝服务器处理</code></p>
-<h3 id="第九阶段：支付回调处理"><a href="#第九阶段：支付回调处理" class="headerlink" title="第九阶段：支付回调处理"></a>第九阶段：支付回调处理</h3><p>输入数据（支付宝异步回调）：</p>
+<h3 id="第九阶段支付回调处理"><a class="markdownIt-Anchor" href="#第九阶段支付回调处理"></a> 第九阶段：支付回调处理</h3>
+<p>输入数据（支付宝异步回调）：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST /api/v1/alipay/pay_notify</span><br></pre></td></tr></table></figure>
-
 <p>参数包括：</p>
 <ul>
 <li>trade_status: “TRADE_SUCCESS”</li>
 <li>out_trade_no: “1234567890123456” (商户订单号)</li>
-<li>trade_no: “2021081622001234567890123456” (支付宝交易号)  </li>
+<li>trade_no: “2021081622001234567890123456” (支付宝交易号)</li>
 <li>total_amount: “1.68”</li>
 <li>sign: “支付宝RSA256签名”</li>
 <li>其他支付宝回调参数…</li>
@@ -570,7 +572,6 @@
 <li>签名验证：</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">sign</span> <span class="operator">=</span> params.get(<span class="string">&quot;sign&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">content</span> <span class="operator">=</span> AlipaySignature.getSignCheckContentV1(params);</span><br><span class="line"><span class="type">boolean</span> <span class="variable">checkSignature</span> <span class="operator">=</span> AlipaySignature.rsa256CheckContent(content, sign, alipayPublicKey, <span class="string">&quot;UTF-8&quot;</span>);</span><br></pre></td></tr></table></figure>
-
 <ol start="4">
 <li>记录回调日志：记录交易名称、状态、支付宝交易号、金额等信息</li>
 </ol>
@@ -580,7 +581,8 @@
 </ul>
 <p><strong>验证成功继续处理…</strong></p>
 <p>数据流向：<code>支付宝服务器</code> -&gt; <code>AliPayController.payNotify()</code> -&gt; <code>参数解析和验证</code></p>
-<h3 id="第十阶段：订单状态更新"><a href="#第十阶段：订单状态更新" class="headerlink" title="第十阶段：订单状态更新"></a>第十阶段：订单状态更新</h3><p>输入数据：</p>
+<h3 id="第十阶段订单状态更新"><a class="markdownIt-Anchor" href="#第十阶段订单状态更新"></a> 第十阶段：订单状态更新</h3>
+<p>输入数据：</p>
 <ul>
 <li>orderId：从回调参数 <code>out_trade_no</code> 获取</li>
 </ul>
@@ -590,7 +592,6 @@
 <li>构造更新对象：</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">PayOrder</span> <span class="variable">payOrderReq</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PayOrder</span>();</span><br><span class="line">payOrderReq.setOrderId(<span class="string">&quot;1234567890123456&quot;</span>);</span><br><span class="line">payOrderReq.setStatus(<span class="string">&quot;PAY_SUCCESS&quot;</span>); <span class="comment">// Constants.OrderStatusEnum.PAY_SUCCESS.getCode()</span></span><br></pre></td></tr></table></figure>
-
 <ol start="3">
 <li>调用 <code>IOrderDao.changeOrderPaySuccess()</code></li>
 <li>执行SQL：<code>UPDATE pay_order SET status = ?, pay_time = now(), update_time = now() WHERE order_id = ?</code></li>
@@ -601,7 +602,8 @@
 <li>设置支付时间为当前时间</li>
 </ul>
 <p>数据流向：<code>OrderServiceImpl</code> -&gt; <code>构造更新对象</code> -&gt; <code>IOrderDao</code> -&gt; <code>MySQL数据库</code></p>
-<h3 id="第十一阶段：异步事件发布"><a href="#第十一阶段：异步事件发布" class="headerlink" title="第十一阶段：异步事件发布"></a>第十一阶段：异步事件发布</h3><p>输入数据：</p>
+<h3 id="第十一阶段异步事件发布"><a class="markdownIt-Anchor" href="#第十一阶段异步事件发布"></a> 第十一阶段：异步事件发布</h3>
+<p>输入数据：</p>
 <ul>
 <li>更新后的 <code>PayOrder</code> 对象</li>
 </ul>
@@ -613,7 +615,6 @@
 </ol>
 <p><strong>输出数据</strong>：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;orderId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1234567890123456&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;PAY_SUCCESS&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;payTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-09-16 10:30:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;updateTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-09-16 10:30:00&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
 <p><strong>后续处理</strong>：</p>
 <ul>
 <li>商品发货逻辑</li>
@@ -622,13 +623,16 @@
 <li>返利处理等</li>
 </ul>
 <p>数据流向：<code>OrderServiceImpl</code> -&gt; <code>EventBus</code> -&gt; <code>OrderPaySuccessListener</code> -&gt; <code>后续业务处理</code></p>
-<h3 id="第十二阶段：回调响应返回"><a href="#第十二阶段：回调响应返回" class="headerlink" title="第十二阶段：回调响应返回"></a>第十二阶段：回调响应返回</h3><p><strong>输出数据</strong>：</p>
+<h3 id="第十二阶段回调响应返回"><a class="markdownIt-Anchor" href="#第十二阶段回调响应返回"></a> 第十二阶段：回调响应返回</h3>
+<p><strong>输出数据</strong>：</p>
 <ul>
 <li>向支付宝返回字符串 “success”（表示回调处理成功）</li>
-<li>记录日志：”支付回调，支付回调，更新订单 {}”</li>
+<li>记录日志：“支付回调，支付回调，更新订单 {}”</li>
 </ul>
 <p>数据流向：<code>AliPayController</code> -&gt; <code>支付宝服务器</code>（确认回调处理完成）</p>
-<h2 id="异步处理机制"><a href="#异步处理机制" class="headerlink" title="异步处理机制"></a>异步处理机制</h2><h3 id="定时任务处理"><a href="#定时任务处理" class="headerlink" title="定时任务处理"></a>定时任务处理</h3><p><strong>超时关单</strong>：</p>
+<h2 id="异步处理机制"><a class="markdownIt-Anchor" href="#异步处理机制"></a> 异步处理机制</h2>
+<h3 id="定时任务处理"><a class="markdownIt-Anchor" href="#定时任务处理"></a> 定时任务处理</h3>
+<p><strong>超时关单</strong>：</p>
 <ul>
 <li><code>TimeoutCloseOrderJob</code> 每10分钟执行一次</li>
 <li>查询超过30分钟未支付的订单：<code>queryTimeoutCloseOrderList()</code></li>
@@ -641,7 +645,8 @@
 <li>主动调用支付宝接口查询订单实际支付状态</li>
 <li>若支付成功则更新订单状态为 <code>PAY_SUCCESS</code></li>
 </ul>
-<h3 id="事件监听器"><a href="#事件监听器" class="headerlink" title="事件监听器"></a>事件监听器</h3><p><strong>支付成功事件监听</strong>：</p>
+<h3 id="事件监听器"><a class="markdownIt-Anchor" href="#事件监听器"></a> 事件监听器</h3>
+<p><strong>支付成功事件监听</strong>：</p>
 <ul>
 <li><code>OrderPaySuccessListener</code> 基于Guava EventBus实现</li>
 <li>通过<code>@Subscribe</code>注解订阅支付成功事件</li>
