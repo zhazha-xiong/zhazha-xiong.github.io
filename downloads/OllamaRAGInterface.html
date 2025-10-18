@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>渣渣熊窝</title>
+  <meta name="description" content="DeepSeek AI 助手 	 	 		tailwind.config &#x3D; { 			theme: { 				extend: { 					colors: { 						primary: { 							50: &#39;#f5f9ff&#39;, 							100: &#39;#eaf0ff&#39;, 							200: &#39;#d7e1ff&#39;, 							300: &#39;#b9c9ff&#39;,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="渣渣熊窝">
+<meta property="og:url" content="https://www.zhazhabear.site/downloads/OllamaRAGInterface.html">
+<meta property="og:site_name" content="渣渣熊窝">
+<meta property="og:description" content="DeepSeek AI 助手 	 	 		tailwind.config &#x3D; { 			theme: { 				extend: { 					colors: { 						primary: { 							50: &#39;#f5f9ff&#39;, 							100: &#39;#eaf0ff&#39;, 							200: &#39;#d7e1ff&#39;, 							300: &#39;#b9c9ff&#39;,">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-10-18T14:17:41.739Z">
+<meta property="article:modified_time" content="2025-10-18T14:17:41.739Z">
+<meta property="article:author" content="zzbear">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.zhazhabear.site/downloads/OllamaRAGInterface.html">
+  
+  
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/zhazha-xiong" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">渣渣熊</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Dalian, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository/">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/zhazha-xiong" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E5%9E%8B%E6%94%AF%E4%BB%98%E5%95%86%E5%9F%8E%E5%AD%A6%E4%B9%A0/">小型支付商城学习</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Natapp/" rel="tag">Natapp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ollama/" rel="tag">Ollama</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Portainer/" rel="tag">Portainer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/" rel="tag">PostgreSQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAG/" rel="tag">RAG</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-ai/" rel="tag">Spring ai</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/" rel="tag">前端页面</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" rel="tag">后端开发</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95/" rel="tag">微信登录</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%B2%99%E7%AE%B1/" rel="tag">支付宝沙箱</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" rel="tag">项目学习</a><span class="tag-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Docker/" style="font-size: 13.2px;">Docker</a> <a href="/tags/Natapp/" style="font-size: 13px;">Natapp</a> <a href="/tags/Ollama/" style="font-size: 13.4px;">Ollama</a> <a href="/tags/Portainer/" style="font-size: 13px;">Portainer</a> <a href="/tags/PostgreSQL/" style="font-size: 13px;">PostgreSQL</a> <a href="/tags/RAG/" style="font-size: 13.4px;">RAG</a> <a href="/tags/Spring-ai/" style="font-size: 13.6px;">Spring ai</a> <a href="/tags/redis/" style="font-size: 13px;">redis</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/" style="font-size: 13.2px;">前端页面</a> <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 13.8px;">后端开发</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95/" style="font-size: 13px;">微信登录</a> <a href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%B2%99%E7%AE%B1/" style="font-size: 13px;">支付宝沙箱</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 13px;">运维</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" style="font-size: 14px;">项目学习</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/10/18/OllamaRAG%E7%9F%A5%E8%AF%86%E5%BA%93%E6%8E%A5%E5%8F%A3%E9%A1%B5%E9%9D%A2%E5%AF%B9%E6%8E%A5/" class="title">OllamaRAG知识库接口页面对接</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-10-18T11:23:00.000Z" itemprop="datePublished">2025-10-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/10/18/OllamaRAG%E7%9F%A5%E8%AF%86%E5%BA%93%E6%8E%A5%E5%8F%A3%E6%9C%8D%E5%8A%A1%E5%AE%9E%E7%8E%B0/" class="title">Ollama RAG 知识库接口服务实现</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-10-18T06:33:00.000Z" itemprop="datePublished">2025-10-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/10/18/OllamaRAG%E7%9F%A5%E8%AF%86%E5%BA%93%E4%B8%8A%E4%BC%A0%E3%80%81%E8%A7%A3%E6%9E%90%E5%92%8C%E9%AA%8C%E8%AF%81/" class="title">Ollama RAG 知识库上传、解析和验证</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-10-18T06:16:00.000Z" itemprop="datePublished">2025-10-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/10/15/Ollama%E6%B5%81%E5%BC%8F%E5%BA%94%E7%AD%94%E6%8E%A5%E5%8F%A3%E9%A1%B5%E9%9D%A2%E5%AF%B9%E6%8E%A5/" class="title">Ollama流式应答接口页面对接</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-10-15T11:31:00.000Z" itemprop="datePublished">2025-10-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/10/15/Ollama%E6%B5%81%E5%BC%8F%E5%BA%94%E7%AD%94%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/" class="title">Ollama流式应答接口实现</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-10-15T07:45:00.000Z" itemprop="datePublished">2025-10-15</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="page-" class="article article-type-page" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/downloads/OllamaRAGInterface.html" class="article-date">
+	  <time datetime="2025-10-18T14:17:41.739Z" itemprop="datePublished">2025-10-18</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/downloads/OllamaRAGInterface.html#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <!DOCTYPE html>
+<html lang="zh-CN" class="h-full bg-slate-100">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DeepSeek AI 助手</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						primary: {
+							50: '#f5f9ff',
+							100: '#eaf0ff',
+							200: '#d7e1ff',
+							300: '#b9c9ff',
+							400: '#94a6ff',
+							500: '#6c7fff',
+							600: '#4a5bff',
+							700: '#373fe5',
+							800: '#2b31b4',
+							900: '#252c8d'
+						}
+					},
+					boxShadow: {
+						soft: '0 20px 45px -24px rgba(15,23,42,0.35)'
+					}
+				}
+			}
+		}
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+	<style>
+		html,
+		body {
+			height: 100%;
+		}
+
+		.markdown-body {
+			font-size: 15px;
+			line-height: 1.75;
+			color: inherit;
+		}
+
+		.markdown-body>*:last-child {
+			margin-bottom: 0;
+		}
+
+		.markdown-body p {
+			margin: 0 0 0.75em;
+		}
+
+		.markdown-body ul,
+		.markdown-body ol {
+			margin: 0 0 0.75em;
+			padding-left: 1.25em;
+		}
+
+		.markdown-body li {
+			margin: 0.25em 0;
+		}
+
+		.markdown-body pre {
+			margin: 0.75em 0;
+			padding: 0.9em 1rem;
+			border-radius: 1rem;
+			background: #0f172a;
+			color: #e2e8f0;
+			overflow-x: auto;
+		}
+
+		.markdown-body code {
+			padding: 0.15em 0.4em;
+			border-radius: 0.5em;
+			background: rgba(15, 23, 42, 0.12);
+			font-size: 0.9em;
+		}
+
+		.user-bubble .markdown-body code {
+			background: rgba(255, 255, 255, 0.25);
+			color: #f8fafc;
+		}
+
+		.user-bubble .markdown-body pre {
+			background: rgba(15, 23, 42, 0.18);
+			color: #f8fafc;
+		}
+
+		.markdown-body table {
+			width: 100%;
+			border-collapse: collapse;
+			margin: 0.75em 0;
+		}
+
+		.markdown-body th,
+		.markdown-body td {
+			border: 1px solid rgba(15, 23, 42, 0.1);
+			padding: 0.5em 0.75em;
+			text-align: left;
+		}
+
+		.markdown-body blockquote {
+			border-left: 4px solid rgba(99, 102, 241, 0.3);
+			margin: 0.75em 0;
+			padding-left: 1em;
+			color: #64748b;
+			font-style: italic;
+		}
+
+		.markdown-body a {
+			color: #4a5bff;
+			text-decoration: underline;
+			text-underline-offset: 3px;
+		}
+
+		.think-block {
+			background: rgba(148, 163, 184, 0.15);
+			border: 1px dashed rgba(148, 163, 184, 0.45);
+		}
+
+		.think-block code {
+			background: rgba(148, 163, 184, 0.25);
+			color: #475569;
+		}
+	</style>
+</head>
+
+<body class="h-full overflow-hidden font-['Inter','PingFang SC','Microsoft YaHei',sans-serif] text-slate-900">
+	<div class="h-screen flex bg-slate-100 overflow-hidden">
+		<!-- Sidebar -->
+	<aside class="w-72 xl:w-80 bg-white border-r border-slate-200 flex flex-col shadow-soft overflow-hidden">
+			<div class="px-5 py-4 border-b border-slate-200 flex items-center justify-between">
+				<div>
+					<p class="text-xs uppercase tracking-[0.2em] text-slate-400">会话</p>
+					<h1 class="text-lg font-semibold text-slate-800">DeepSeek AI 助手</h1>
+				</div>
+				<button id="chatListToggle" class="p-2 rounded-lg hover:bg-slate-100 text-slate-500" title="展开/收起聊天列表">
+					<svg id="chatListToggleIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 transition-transform">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"/>
+					</svg>
+				</button>
+			</div>
+
+			<div class="px-5 pt-4 pb-2 border-b border-slate-200 space-y-3">
+				<button id="newChatBtn" class="w-full flex items-center justify-center gap-2 rounded-xl border border-dashed border-primary-300 bg-primary-50 text-primary-700 py-2.5 font-medium hover:bg-primary-100 transition">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+					</svg>
+					新建聊天
+				</button>
+
+				<div class="bg-slate-50 border border-slate-200 rounded-xl p-3 space-y-3">
+					<label class="text-xs font-semibold text-slate-500 tracking-wide">推理模型</label>
+					<select id="modelSelect" class="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-500/60">
+						<option value="deepseek-r1:1.5b">deepseek-r1:1.5b</option>
+					</select>
+					<p class="text-[11px] leading-5 text-slate-400">当前部署固定使用 deepseek-r1:1.5b，如需调整请联系运维。</p>
+				</div>
+			</div>
+
+			<div id="chatListSection" class="flex-1 overflow-y-auto px-3 py-4 space-y-2 transition-all">
+				<ul id="chatList" class="space-y-2"></ul>
+				<p id="emptyChatHint" class="hidden text-xs text-slate-400 text-center pt-10">暂无聊天，会话列表会展示最近的对话</p>
+			</div>
+
+			<div class="px-5 py-4 border-t border-slate-200 space-y-3">
+				<div class="flex items-center justify-between">
+					<p class="text-xs font-semibold text-slate-500 tracking-wide">知识标签</p>
+					<button id="refreshTagsBtn" class="text-xs text-primary-600 hover:text-primary-700">刷新</button>
+				</div>
+				<select id="ragTagSelect" class="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-500/60">
+					<option value>默认知识库</option>
+				</select>
+				<button id="openUploadModalBtn" class="w-full flex flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-primary-300 bg-primary-50/60 px-4 py-6 text-primary-600 hover:border-primary-400 hover:bg-primary-100 transition">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+					</svg>
+					<span class="text-sm font-medium">知识库上传</span>
+					<span class="text-[11px] text-slate-400">点击打开上传面板</span>
+				</button>
+				<p class="text-[11px] text-slate-400 leading-4">上传文档可以丰富知识库，支持 PDF、Word、Markdown 等常见格式。</p>
+			</div>
+		</aside>
+
+		<!-- Main conversation area -->
+	<main class="flex-1 flex flex-col overflow-hidden">
+			<header class="h-20 border-b border-slate-200 bg-white px-8 flex items-center justify-between">
+				<div>
+					<p class="text-xs uppercase tracking-[0.24em] text-slate-400">当前会话</p>
+					<div class="flex items-center gap-3">
+						<h2 id="activeChatTitle" class="text-xl font-semibold text-slate-800">加载中...</h2>
+						<span id="ragTagBadge" class="hidden text-xs rounded-full bg-primary-100 text-primary-600 px-3 py-1">默认知识库</span>
+					</div>
+				</div>
+			</header>
+
+			<section id="messagesContainer" class="flex-1 overflow-y-auto px-6 md:px-10 py-6 space-y-4 bg-gradient-to-br from-slate-50 via-white to-slate-100">
+				<div class="mx-auto max-w-3xl space-y-4" id="messageList"></div>
+				<div id="conversationEmptyState" class="mx-auto max-w-3xl text-center text-slate-400 pt-20">
+					<div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary-50 text-primary-500 mb-4">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3h5.25M12 18.75c3.728 0 6.75-2.186 6.75-4.875S15.728 9 12 9s-6.75 2.186-6.75 4.875c0 1.474.986 2.782 2.573 3.63L7.5 18.75l2.134-.878"/>
+						</svg>
+					</div>
+					<h3 class="text-lg font-semibold text-slate-600 mb-2">开始新的对话吧</h3>
+					<p class="text-sm text-slate-400">输入问题或上传资料，DeepSeek 将实时生成答案。</p>
+				</div>
+			</section>
+
+			<footer class="border-t border-slate-200 bg-white px-6 md:px-10 py-4">
+				<div class="mx-auto max-w-3xl">
+					<div class="mb-2 flex items-center justify-between text-xs text-slate-400">
+						<span>按 <kbd class="px-1 py-0.5 bg-slate-100 border border-slate-200 rounded">Ctrl</kbd> / <kbd class="px-1 py-0.5 bg-slate-100 border border-slate-200 rounded">⌘</kbd> + <kbd class="px-1 py-0.5 bg-slate-100 border border-slate-200 rounded">Enter</kbd> 发送</span>
+						<span id="streamStatus" class="hidden items-center gap-1 text-primary-500"><span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>生成中...</span>
+					</div>
+					<div class="relative group">
+						<textarea id="messageInput" rows="1" placeholder="向 DeepSeek 提问，Shift + Enter 换行" class="w-full resize-none rounded-2xl border border-slate-200 bg-white px-4 py-3 pr-24 text-sm leading-relaxed text-slate-700 shadow-soft/40 focus:border-primary-400 focus:ring-2 focus:ring-primary-300/40 transition" autocomplete="off"></textarea>
+						<button id="sendBtn" class="absolute bottom-2.5 right-2.5 inline-flex items-center gap-2 rounded-xl bg-primary-500 text-white px-4 py-2 text-sm font-medium shadow-soft hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-300/70 disabled:bg-primary-300 disabled:cursor-not-allowed" type="button">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.125A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.875L6 12zm0 0h7.5"/>
+							</svg>
+							发送
+						</button>
+					</div>
+				</div>
+			</footer>
+		</main>
+	</div>
+
+	<!-- Toast container -->
+	<div id="toastContainer" class="fixed top-6 right-6 z-50 space-y-3 max-w-sm"></div>
+
+	<!-- Upload Modal -->
+	<div id="uploadModal" class="hidden fixed inset-0 z-40 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm px-4">
+		<div class="relative w-full max-w-xl rounded-3xl bg-white shadow-soft">
+			<div class="flex items-center justify-between px-6 py-4 border-b border-slate-200">
+				<div>
+					<p class="text-xs uppercase tracking-[0.2em] text-slate-400">知识库</p>
+					<h3 class="text-lg font-semibold text-slate-800">上传文档</h3>
+				</div>
+				<button id="closeUploadModalBtn" class="p-2 text-slate-400 hover:text-slate-600">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+					</svg>
+				</button>
+			</div>
+			<div class="px-6 py-6 space-y-5">
+				<div class="space-y-2">
+					<label for="uploadTagInput" class="text-sm font-medium text-slate-600">知识库名称</label>
+					<input id="uploadTagInput" type="text" placeholder="请输入知识库标签" class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-400/60">
+				</div>
+				<div>
+					<p class="text-sm font-medium text-slate-600 mb-2">选择文件</p>
+					<div id="uploadDropzone" class="group relative flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-slate-200 bg-slate-50/60 px-6 py-12 text-center text-slate-400 transition hover:border-primary-300 hover:bg-primary-50">
+						<input id="uploadFileInput" type="file" multiple class="hidden">
+						<div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-100 text-primary-500">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 9l-4.5-4.5M12 4.5L7.5 9M12 4.5v12"/>
+							</svg>
+						</div>
+						<div>
+							<p class="text-sm text-slate-600">点击选择文件或将文件拖拽到此区域</p>
+							<p class="text-xs text-slate-400">支持格式：pdf, docx, doc, xls, xlsx, ppt, pptx, md, txt, sql 等</p>
+						</div>
+					</div>
+					<ul id="uploadFileList" class="mt-4 space-y-2"></ul>
+				</div>
+			</div>
+			<div class="flex items-center justify-end gap-3 border-t border-slate-200 px-6 py-4">
+				<button id="cancelUploadBtn" class="rounded-xl border border-slate-200 px-4 py-2 text-sm text-slate-500 hover:bg-slate-50">取消</button>
+				<button id="startUploadBtn" class="rounded-xl bg-primary-500 px-5 py-2 text-sm font-medium text-white hover:bg-primary-600 disabled:bg-primary-300 disabled:cursor-not-allowed">开始上传</button>
+			</div>
+		</div>
+	</div>
+
+	<template id="messageTemplate">
+		<div class="flex gap-3">
+			<div class="w-9 h-9 rounded-full flex items-center justify-center bg-slate-200 text-slate-500"></div>
+			<div class="flex-1 space-y-2">
+				<div class="flex items-center gap-2 text-xs text-slate-400">
+					<span class="font-medium"></span>
+					<span></span>
+				</div>
+				<div class="message-content whitespace-pre-wrap text-[15px] leading-7 text-slate-700"></div>
+			</div>
+		</div>
+	</template>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const state = {
+				chats: [],
+				activeChatId: null,
+				streaming: false,
+				eventSource: null,
+				chatIndex: 1,
+				openMenuChatId: null,
+				uploadFiles: [],
+				inputHistory: [],
+				historyIndex: -1,
+				autoScroll: true
+			};
+
+			const selectors = {
+				chatList: document.getElementById('chatList'),
+				emptyChatHint: document.getElementById('emptyChatHint'),
+				newChatBtn: document.getElementById('newChatBtn'),
+				chatListSection: document.getElementById('chatListSection'),
+				chatListToggle: document.getElementById('chatListToggle'),
+				chatListToggleIcon: document.getElementById('chatListToggleIcon'),
+				modelSelect: document.getElementById('modelSelect'),
+				ragTagBadge: document.getElementById('ragTagBadge'),
+				ragTagSelect: document.getElementById('ragTagSelect'),
+				refreshTagsBtn: document.getElementById('refreshTagsBtn'),
+				activeChatTitle: document.getElementById('activeChatTitle'),
+				messageList: document.getElementById('messageList'),
+				messageTemplate: document.getElementById('messageTemplate'),
+				messageInput: document.getElementById('messageInput'),
+				sendBtn: document.getElementById('sendBtn'),
+				conversationEmptyState: document.getElementById('conversationEmptyState'),
+				messagesContainer: document.getElementById('messagesContainer'),
+				streamStatus: document.getElementById('streamStatus'),
+				toastContainer: document.getElementById('toastContainer'),
+				openUploadModalBtn: document.getElementById('openUploadModalBtn'),
+				uploadModal: document.getElementById('uploadModal'),
+				closeUploadModalBtn: document.getElementById('closeUploadModalBtn'),
+				cancelUploadBtn: document.getElementById('cancelUploadBtn'),
+				uploadTagInput: document.getElementById('uploadTagInput'),
+				uploadFileInput: document.getElementById('uploadFileInput'),
+				uploadDropzone: document.getElementById('uploadDropzone'),
+				uploadFileList: document.getElementById('uploadFileList'),
+				startUploadBtn: document.getElementById('startUploadBtn')
+			};
+
+			const API_BASE = 'http://localhost:8080/api/v1';
+
+			if (window.marked) {
+				marked.setOptions({
+					breaks: true,
+					gfm: true
+				});
+			}
+
+			function renderMarkdown(content) {
+				const source = typeof content === 'string' ? content : '';
+				if (!source.trim()) {
+					return '';
+				}
+				try {
+					const html = marked.parse(source);
+					return window.DOMPurify ? DOMPurify.sanitize(html) : html;
+				} catch (error) {
+					console.error('Markdown render error:', error);
+					return window.DOMPurify ? DOMPurify.sanitize(source) : source;
+				}
+			}
+
+			function enhanceMarkdown(container, role) {
+				if (!container) return;
+				container.querySelectorAll('pre').forEach((pre) => {
+					pre.classList.add('rounded-2xl', 'bg-slate-900', 'text-slate-100', 'px-4', 'py-3', 'overflow-x-auto', 'text-sm');
+				});
+				container.querySelectorAll('code').forEach((code) => {
+					if (code.parentElement && code.parentElement.tagName === 'PRE') {
+						return;
+					}
+					if (role === 'user') {
+						code.classList.add('bg-white/20', 'text-white');
+					} else {
+						code.classList.add('bg-slate-200/70', 'text-slate-900');
+					}
+					code.classList.add('px-2', 'py-0.5', 'rounded', 'text-[13px]');
+				});
+				container.querySelectorAll('p').forEach((p) => p.classList.add('leading-7'));
+				container.querySelectorAll('ul,ol').forEach((list) => {
+					list.classList.add('leading-7', 'pl-5', 'space-y-1');
+				});
+				container.querySelectorAll('li').forEach((li) => li.classList.add('leading-7'));
+				container.querySelectorAll('a').forEach((anchor) => {
+					anchor.classList.add('text-primary-500', 'underline', 'underline-offset-4');
+					anchor.setAttribute('target', '_blank');
+					anchor.setAttribute('rel', 'noopener noreferrer');
+				});
+				container.querySelectorAll('table').forEach((table) => {
+					table.classList.add('mt-3', 'rounded-xl', 'overflow-hidden');
+				});
+				container.querySelectorAll('th,td').forEach((cell) => {
+					cell.classList.add('border', 'border-slate-200/70', 'px-3', 'py-2', 'text-sm');
+				});
+				container.querySelectorAll('blockquote').forEach((quote) => {
+					quote.classList.add('border-l-4', 'border-primary-200', 'pl-4', 'text-slate-500', 'italic');
+				});
+			}
+
+			function splitAssistantSegments(text) {
+				const source = typeof text === 'string' ? text : '';
+				const segments = [];
+				const openTag = '<think>';
+				const closeTag = '</think>';
+				let cursor = 0;
+				let inThink = false;
+
+				while (cursor < source.length) {
+					if (!inThink) {
+						const start = source.indexOf(openTag, cursor);
+						if (start === -1) {
+							segments.push({ type: 'text', content: source.slice(cursor) });
+							break;
+						}
+						if (start > cursor) {
+							segments.push({ type: 'text', content: source.slice(cursor, start) });
+						}
+						cursor = start + openTag.length;
+						inThink = true;
+					} else {
+						const end = source.indexOf(closeTag, cursor);
+						if (end === -1) {
+							segments.push({ type: 'think', content: source.slice(cursor) });
+							cursor = source.length;
+						} else {
+							segments.push({ type: 'think', content: source.slice(cursor, end) });
+							cursor = end + closeTag.length;
+							inThink = false;
+						}
+					}
+				}
+
+				return segments.filter((segment) => segment.content && segment.content.length);
+			}
+
+			function renderMessageContent(message) {
+				const container = message.element;
+				if (!container) return;
+
+				container.innerHTML = '';
+
+				if (message.role === 'assistant') {
+					const segments = splitAssistantSegments(message.rawContent);
+					let displayText = '';
+
+					if (!segments.length) {
+						const placeholder = document.createElement('p');
+						placeholder.className = 'text-sm text-slate-400';
+						placeholder.textContent = '思考中…';
+						container.appendChild(placeholder);
+						message.displayText = '';
+						return;
+					}
+
+					segments.forEach((segment) => {
+						const trimmed = (segment.content || '').trim();
+						if (!trimmed) return;
+
+						if (segment.type === 'think') {
+							const thinkBlock = document.createElement('div');
+							thinkBlock.className = 'think-block markdown-body rounded-2xl px-3 py-2 text-xs leading-6 text-slate-500 space-y-2';
+							thinkBlock.innerHTML = renderMarkdown(trimmed);
+							enhanceMarkdown(thinkBlock, 'assistant');
+							const thinkHeader = document.createElement('div');
+							thinkHeader.className = 'mb-1 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400';
+							thinkHeader.innerHTML = '<span class="inline-block h-1.5 w-1.5 rounded-full bg-primary-400"></span><span>深度思考</span>';
+							thinkBlock.prepend(thinkHeader);
+							container.appendChild(thinkBlock);
+						} else {
+							const textBlock = document.createElement('div');
+							textBlock.className = 'markdown-body text-[15px] leading-7 text-slate-700 space-y-3';
+							const html = renderMarkdown(segment.content);
+							if (html) {
+								textBlock.innerHTML = html;
+								enhanceMarkdown(textBlock, 'assistant');
+							} else {
+								textBlock.textContent = segment.content;
+							}
+							container.appendChild(textBlock);
+							displayText += `${segment.content} `;
+						}
+					});
+
+					if (!container.childElementCount) {
+						const placeholder = document.createElement('p');
+						placeholder.className = 'text-sm text-slate-400';
+						placeholder.textContent = '思考中…';
+						container.appendChild(placeholder);
+					}
+
+					const normalized = displayText.replace(/\s+/g, ' ').trim();
+					message.displayText = normalized || '生成中…';
+				} else {
+					const textBlock = document.createElement('div');
+					textBlock.className = 'markdown-body text-[15px] leading-7 space-y-3';
+					const html = renderMarkdown(message.rawContent);
+					if (html) {
+						textBlock.innerHTML = html;
+						enhanceMarkdown(textBlock, 'user');
+					} else {
+						textBlock.textContent = message.rawContent || '';
+					}
+					container.appendChild(textBlock);
+					message.displayText = (message.rawContent || '').replace(/\s+/g, ' ').trim();
+				}
+			}
+
+			function navigateHistory(direction) {
+				if (!state.inputHistory.length) {
+					return;
+				}
+
+				if (direction === -1) {
+					if (state.historyIndex === -1) {
+						state.historyIndex = state.inputHistory.length - 1;
+					} else {
+						state.historyIndex = Math.max(0, state.historyIndex - 1);
+					}
+				} else if (direction === 1) {
+					if (state.historyIndex === -1) {
+						return;
+					}
+					state.historyIndex = Math.min(state.inputHistory.length, state.historyIndex + 1);
+					if (state.historyIndex === state.inputHistory.length) {
+						state.historyIndex = -1;
+					}
+				}
+
+				let value = '';
+				if (state.historyIndex >= 0) {
+					value = state.inputHistory[state.historyIndex] || '';
+				}
+
+				selectors.messageInput.value = value;
+				autoResizeTextarea();
+				requestAnimationFrame(() => {
+					const length = value.length;
+					selectors.messageInput.setSelectionRange(length, length);
+				});
+			}
+
+			function createMessage(role, content = '') {
+				const normalized = typeof content === 'string' ? content : '';
+				return {
+					id: `msg-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+					role,
+					rawContent: normalized,
+					displayText: normalized.replace(/\s+/g, ' ').trim(),
+					timestamp: new Date(),
+					element: null
+				};
+			}
+
+			function getActiveChat() {
+				return state.chats.find((chat) => chat.id === state.activeChatId) || null;
+			}
+
+			function formatTimestamp(date) {
+				return new Intl.DateTimeFormat('zh-CN', {
+					hour: '2-digit',
+					minute: '2-digit'
+				}).format(date);
+			}
+
+			function formatSidePreview(chat) {
+				if (!chat.messages.length) return '暂无对话';
+				const latestUserMessage = [...chat.messages].reverse().find((msg) => msg.role === 'user');
+				const sourceMessage = latestUserMessage || chat.messages[chat.messages.length - 1];
+				const baseText = (sourceMessage.displayText || sourceMessage.rawContent || '')
+					.replace(/\s+/g, ' ')
+					.trim();
+				if (!baseText) {
+					return sourceMessage.role === 'assistant' ? '生成中…' : '草稿';
+				}
+				return baseText.slice(0, 26) + (baseText.length > 26 ? '…' : '');
+			}
+
+			function showToast(message, tone = 'info') {
+				const colors = {
+					info: 'bg-white border-slate-200 text-slate-600',
+					success: 'bg-green-50 border-green-200 text-green-600',
+					warning: 'bg-amber-50 border-amber-200 text-amber-600',
+					error: 'bg-red-50 border-red-200 text-red-600'
+				};
+				const toast = document.createElement('div');
+				toast.className = `border rounded-xl px-4 py-3 shadow-soft text-sm flex items-center gap-2 ${colors[tone] || colors.info}`;
+				toast.innerHTML = `<span>${message}</span>`;
+				selectors.toastContainer.appendChild(toast);
+				setTimeout(() => {
+					toast.classList.add('opacity-0', 'translate-y-2');
+					setTimeout(() => toast.remove(), 300);
+				}, 2600);
+			}
+
+			function renderChatList() {
+				state.openMenuChatId = null;
+				selectors.chatList.innerHTML = '';
+				if (!state.chats.length) {
+					selectors.emptyChatHint.classList.remove('hidden');
+					return;
+				}
+				selectors.emptyChatHint.classList.add('hidden');
+
+				state.chats.forEach((chat) => {
+					const item = document.createElement('li');
+					item.className = 'relative chat-item list-none';
+
+					const selectButton = document.createElement('button');
+					selectButton.type = 'button';
+					selectButton.className = `w-full text-left rounded-xl border border-transparent px-3 py-2.5 pr-10 transition flex flex-col gap-1 ${chat.id === state.activeChatId
+						? 'bg-primary-50 border-primary-200 shadow-inner shadow-primary-200/40'
+						: 'bg-white hover:border-slate-200 hover:bg-slate-50'}`;
+
+					const timestamp = chat.messages.length
+						? formatTimestamp(chat.messages[chat.messages.length - 1].timestamp)
+						: '--:--';
+
+					selectButton.innerHTML = `
+						<div class="flex items-start gap-2">
+							<div class="flex-1 min-w-0 space-y-1">
+								<div class="flex items-center gap-2">
+									${chat.pinned ? '<span class="inline-flex items-center gap-1 rounded-full bg-primary-100 px-2 py-0.5 text-[11px] font-medium text-primary-600">置顶</span>' : ''}
+									<span class="font-medium text-sm text-slate-700 truncate">${chat.title}</span>
+								</div>
+								<p class="text-xs text-slate-400 truncate">${formatSidePreview(chat)}</p>
+							</div>
+							<span class="text-[11px] text-slate-400 shrink-0 mt-1">${timestamp}</span>
+						</div>
+					`;
+
+					selectButton.addEventListener('click', () => {
+						if (state.activeChatId !== chat.id) {
+							state.activeChatId = chat.id;
+							closeAllMenus();
+							renderChatList();
+							renderActiveChat();
+						}
+					});
+
+					const menuButton = document.createElement('button');
+					menuButton.type = 'button';
+					menuButton.className = 'absolute top-2.5 right-2.5 rounded-lg p-1.5 text-slate-400 hover:text-slate-600 hover:bg-slate-100';
+					menuButton.innerHTML = `
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 100-1.5.75.75 0 000 1.5zm0 6a.75.75 0 100-1.5.75.75 0 000 1.5zm0 6a.75.75 0 100-1.5.75.75 0 000 1.5z" />
+						</svg>
+					`;
+
+					const menu = document.createElement('div');
+					menu.dataset.menuFor = chat.id;
+					menu.className = 'chat-menu hidden absolute top-11 right-2 z-30 w-36 rounded-2xl border border-slate-100 bg-white py-1.5 text-sm text-slate-600 shadow-soft/80';
+					menu.innerHTML = `
+						<button data-action="rename" class="flex w-full items-center gap-2 px-3 py-2 text-left hover:bg-slate-50">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-slate-400">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.862 4.487z" />
+							</svg>
+							重命名
+						</button>
+						<button data-action="pin" class="flex w-full items-center gap-2 px-3 py-2 text-left hover:bg-slate-50">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-slate-400">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5m0 0l-7.5 7.5m7.5-7.5H3" />
+							</svg>
+							${chat.pinned ? '取消置顶' : '置顶'}
+						</button>
+						<button data-action="delete" class="flex w-full items-center gap-2 px-3 py-2 text-left text-red-500 hover:bg-red-50">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673A2.25 2.25 0 0115.916 21H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+							</svg>
+							删除
+						</button>
+					`;
+
+					menuButton.addEventListener('click', (event) => {
+						event.stopPropagation();
+						toggleChatMenu(chat.id, menu);
+					});
+
+					menu.querySelector('[data-action="rename"]').addEventListener('click', (event) => {
+						event.stopPropagation();
+						closeAllMenus();
+						renameChat(chat.id);
+					});
+					menu.querySelector('[data-action="pin"]').addEventListener('click', (event) => {
+						event.stopPropagation();
+						closeAllMenus();
+						togglePinChat(chat.id);
+					});
+					menu.querySelector('[data-action="delete"]').addEventListener('click', (event) => {
+						event.stopPropagation();
+						closeAllMenus();
+						deleteChat(chat.id);
+					});
+
+					item.appendChild(selectButton);
+					item.appendChild(menuButton);
+					item.appendChild(menu);
+					selectors.chatList.appendChild(item);
+				});
+			}
+
+			function closeAllMenus() {
+				selectors.chatList.querySelectorAll('[data-menu-for]').forEach((menu) => menu.classList.add('hidden'));
+				state.openMenuChatId = null;
+			}
+
+			function toggleChatMenu(chatId, menuElement) {
+				if (state.openMenuChatId === chatId) {
+					closeAllMenus();
+				} else {
+					closeAllMenus();
+					menuElement.classList.remove('hidden');
+					state.openMenuChatId = chatId;
+				}
+			}
+
+			function reorderChats() {
+				state.chats.sort((a, b) => {
+					if (a.pinned === b.pinned) {
+						return b.createdAt - a.createdAt;
+					}
+					return a.pinned ? -1 : 1;
+				});
+			}
+
+			function appendMessageToView(message) {
+				selectors.conversationEmptyState.classList.add('hidden');
+				const shouldScroll = state.autoScroll || isNearBottom();
+				const wrapper = document.createElement('div');
+				wrapper.className = `flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`;
+				const bubble = document.createElement('div');
+				bubble.className = message.role === 'user'
+					? 'user-bubble max-w-[85%] rounded-2xl bg-primary-500 text-white px-4 py-3 text-sm leading-7 shadow-soft'
+					: 'assistant-bubble max-w-[85%] rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm leading-7 text-slate-700 shadow-soft/60';
+
+				const meta = document.createElement('div');
+				meta.className = 'flex items-center gap-2 mb-1 text-[11px] text-slate-400';
+				meta.innerHTML = `<span class="font-medium">${message.role === 'assistant' ? 'DeepSeek' : '我'}</span><span>${formatTimestamp(message.timestamp)}</span>`;
+				if (message.role === 'assistant') {
+					meta.querySelector('span').classList.add('text-primary-500');
+				}
+
+				const content = document.createElement('div');
+				content.className = 'message-content space-y-3 text-[15px] leading-7';
+				message.element = content;
+
+				bubble.appendChild(meta);
+				bubble.appendChild(content);
+				wrapper.appendChild(bubble);
+				selectors.messageList.appendChild(wrapper);
+				renderMessageContent(message);
+				scrollMessageToBottom(shouldScroll);
+			}
+
+			function updateActiveBadge(chat) {
+				if (state.activeChatId !== chat.id) return;
+				if (chat.ragTag) {
+					selectors.ragTagBadge.textContent = chat.ragTag;
+					selectors.ragTagBadge.classList.remove('hidden');
+				} else {
+					selectors.ragTagBadge.classList.add('hidden');
+				}
+			}
+
+			function refreshMessageView(chat) {
+				selectors.messageList.innerHTML = '';
+				if (!chat.messages.length) {
+					selectors.conversationEmptyState.classList.remove('hidden');
+					return;
+				}
+				selectors.conversationEmptyState.classList.add('hidden');
+				chat.messages.forEach((msg) => appendMessageToView(msg));
+				state.autoScroll = true;
+				scrollMessageToBottom(true);
+			}
+
+			function isNearBottom(threshold = 120) {
+				const el = selectors.messagesContainer;
+				return el.scrollHeight - el.scrollTop - el.clientHeight <= threshold;
+			}
+
+			function scrollMessageToBottom(force = false) {
+				if (!force && (!state.autoScroll || !isNearBottom())) {
+					return;
+				}
+				requestAnimationFrame(() => {
+					selectors.messagesContainer.scrollTop = selectors.messagesContainer.scrollHeight;
+				});
+			}
+
+			function renderActiveChat() {
+				const chat = getActiveChat();
+				if (!chat) {
+					selectors.activeChatTitle.textContent = '暂无会话';
+					selectors.ragTagBadge.classList.add('hidden');
+					selectors.conversationEmptyState.classList.remove('hidden');
+					return;
+				}
+				selectors.activeChatTitle.textContent = chat.title;
+				updateActiveBadge(chat);
+				refreshMessageView(chat);
+			}
+
+			function setStreaming(isStreaming) {
+				state.streaming = isStreaming;
+				selectors.sendBtn.disabled = isStreaming;
+				selectors.streamStatus.classList.toggle('hidden', !isStreaming);
+			}
+
+			function buildStreamUrl(message) {
+				const base = API_BASE.replace(/\/$/, '');
+				const params = new URLSearchParams({
+					model: selectors.modelSelect.value,
+					message,
+					ragTag: selectors.ragTagSelect.value || ''
+				});
+				return `${base}/ollama/generate_stream_rag?${params.toString()}`;
+			}
+
+			function closeStream() {
+				if (state.eventSource) {
+					state.eventSource.close();
+					state.eventSource = null;
+				}
+				setStreaming(false);
+			}
+
+			function updateAssistantMessage(message, delta) {
+				message.rawContent += delta;
+				renderMessageContent(message);
+				const shouldScroll = state.autoScroll || isNearBottom();
+				scrollMessageToBottom(shouldScroll);
+			}
+
+			function handleStreamResponse(assistantMessage, data) {
+				let payload;
+				try {
+					payload = JSON.parse(data);
+				} catch (error) {
+					if (data === '[DONE]' || data === '[done]') {
+						closeStream();
+					}
+					return;
+				}
+
+				const chunks = Array.isArray(payload) ? payload : [payload];
+				let needsRefresh = false;
+				let shouldClose = false;
+
+				chunks.forEach((chunk) => {
+					const result = chunk?.result || chunk?.results?.[0];
+					if (!result) return;
+
+					const content = result.output?.content;
+					const finish = result.metadata?.finishReason;
+					if (typeof content === 'string' && content.length) {
+						updateAssistantMessage(assistantMessage, content);
+						needsRefresh = true;
+					}
+					if (finish && finish.toUpperCase() === 'STOP') {
+						shouldClose = true;
+					}
+				});
+
+				if (shouldClose) {
+					closeStream();
+				}
+				if (needsRefresh || shouldClose) {
+					renderChatList();
+				}
+			}
+
+			function handleSendMessage() {
+				const text = selectors.messageInput.value.trim();
+				if (!text || state.streaming) {
+					return;
+				}
+
+				const chat = getActiveChat();
+				if (!chat) {
+					showToast('请先创建一个会话', 'warning');
+					return;
+				}
+
+				closeStream();
+
+				if (!state.inputHistory.length || state.inputHistory[state.inputHistory.length - 1] !== text) {
+					state.inputHistory.push(text);
+				}
+				state.historyIndex = -1;
+
+				chat.ragTag = selectors.ragTagSelect.value || '';
+				updateActiveBadge(chat);
+
+				const userMessage = createMessage('user', text);
+				chat.messages.push(userMessage);
+				state.autoScroll = true;
+				appendMessageToView(userMessage);
+				renderChatList();
+
+				selectors.messageInput.value = '';
+				autoResizeTextarea();
+
+				const assistantMessage = createMessage('assistant', '');
+				chat.messages.push(assistantMessage);
+				appendMessageToView(assistantMessage);
+				renderChatList();
+
+				const streamUrl = buildStreamUrl(text);
+				try {
+					const eventSource = new EventSource(streamUrl);
+					state.eventSource = eventSource;
+					setStreaming(true);
+
+					eventSource.onmessage = (event) => {
+						if (!event.data) return;
+						handleStreamResponse(assistantMessage, event.data);
+					};
+
+					eventSource.onerror = () => {
+						console.warn('Stream interrupted, closing connection');
+						closeStream();
+					};
+				} catch (error) {
+					showToast('连接服务失败，请检查接口配置', 'error');
+					closeStream();
+					console.error(error);
+				}
+			}
+
+			function createNewChat() {
+				const chat = {
+					id: `chat-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+					title: `新建聊天 ${state.chatIndex++}`,
+					messages: [],
+					ragTag: selectors.ragTagSelect.value || '',
+					pinned: false,
+					createdAt: Date.now()
+				};
+				state.chats.unshift(chat);
+				reorderChats();
+				state.activeChatId = chat.id;
+				renderChatList();
+				renderActiveChat();
+				showToast('已创建新的会话', 'success');
+			}
+
+			function renameChat(chatId) {
+				const chat = state.chats.find((item) => item.id === chatId);
+				if (!chat) return;
+				const value = prompt('请输入新的会话名称', chat.title);
+				if (value && value.trim().length) {
+					chat.title = value.trim();
+					renderChatList();
+					renderActiveChat();
+					showToast('会话已重命名', 'success');
+				}
+			}
+
+			function togglePinChat(chatId) {
+				const chat = state.chats.find((item) => item.id === chatId);
+				if (!chat) return;
+				closeAllMenus();
+				chat.pinned = !chat.pinned;
+				reorderChats();
+				renderChatList();
+				renderActiveChat();
+				showToast(chat.pinned ? '会话已置顶' : '已取消置顶', 'info');
+			}
+
+			function deleteChat(chatId) {
+				const chat = state.chats.find((item) => item.id === chatId);
+				if (!chat) return;
+				if (!confirm(`确认删除会话「${chat.title}」吗？`)) return;
+				closeAllMenus();
+				const index = state.chats.findIndex((item) => item.id === chat.id);
+				if (index > -1) {
+					state.chats.splice(index, 1);
+				}
+				if (state.chats.length) {
+					state.activeChatId = state.chats[Math.min(index, state.chats.length - 1)].id;
+				} else {
+					state.activeChatId = null;
+					selectors.messageList.innerHTML = '';
+					selectors.conversationEmptyState.classList.remove('hidden');
+				}
+				renderChatList();
+				renderActiveChat();
+				showToast('会话已删除', 'info');
+			}
+
+			function autoResizeTextarea() {
+				const textarea = selectors.messageInput;
+				textarea.style.height = 'auto';
+				textarea.style.height = Math.min(textarea.scrollHeight, 240) + 'px';
+			}
+
+			function fetchRagTags() {
+				const base = API_BASE.replace(/\/$/, '');
+				fetch(`${base}/rag/query_rag_tag_list`)
+					.then((res) => res.json())
+					.then((data) => {
+						if (!data || !Array.isArray(data.data)) return;
+						selectors.ragTagSelect.innerHTML = '<option value="">默认知识库</option>';
+						data.data.forEach((tag) => {
+							const option = document.createElement('option');
+							option.value = tag;
+							option.textContent = tag;
+							selectors.ragTagSelect.appendChild(option);
+						});
+					})
+					.catch(() => {
+						showToast('无法获取知识标签，请确认服务可用', 'warning');
+					});
+			}
+
+			function uploadFiles() {
+				const ragTag = selectors.uploadTagInput.value.trim();
+				if (!state.uploadFiles.length) {
+					showToast('请选择需要上传的文件', 'warning');
+					return;
+				}
+				if (!ragTag) {
+					showToast('请先填写知识库名称', 'warning');
+					return;
+				}
+
+				const formData = new FormData();
+				formData.append('ragTag', ragTag);
+				state.uploadFiles.forEach((file) => formData.append('file', file));
+
+				selectors.startUploadBtn.disabled = true;
+				const originalText = selectors.startUploadBtn.textContent;
+				selectors.startUploadBtn.textContent = '上传中...';
+
+				fetch(`${API_BASE.replace(/\/$/, '')}/rag/file/upload`, {
+					method: 'POST',
+					body: formData
+				})
+					.then((res) => res.json())
+					.then((data) => {
+						showToast(data?.info || '上传完成', 'success');
+						fetchRagTags();
+						closeUploadModal();
+						resetUploadModal();
+					})
+					.catch(() => {
+						showToast('上传失败，请稍后重试', 'error');
+					})
+					.finally(() => {
+						selectors.startUploadBtn.disabled = false;
+						selectors.startUploadBtn.textContent = originalText;
+					});
+			}
+
+			function formatFileSize(size) {
+				if (size < 1024) return `${size} B`;
+				if (size < 1024 * 1024) return `${(size / 1024).toFixed(1)} KB`;
+				if (size < 1024 * 1024 * 1024) return `${(size / 1024 / 1024).toFixed(1)} MB`;
+				return `${(size / 1024 / 1024 / 1024).toFixed(1)} GB`;
+			}
+
+			function updateUploadButtonState() {
+				const valid = selectors.uploadTagInput.value.trim().length > 0 && state.uploadFiles.length > 0;
+				selectors.startUploadBtn.disabled = !valid;
+			}
+
+			function renderUploadFileList() {
+				selectors.uploadFileList.innerHTML = '';
+				if (!state.uploadFiles.length) {
+					const placeholder = document.createElement('li');
+					placeholder.className = 'rounded-xl border border-dashed border-slate-200 bg-white px-4 py-3 text-center text-xs text-slate-400';
+					placeholder.textContent = '尚未选择文件';
+					selectors.uploadFileList.appendChild(placeholder);
+					updateUploadButtonState();
+					return;
+				}
+
+				state.uploadFiles.forEach((file) => {
+					const item = document.createElement('li');
+					item.className = 'flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 text-sm text-slate-600';
+					item.innerHTML = `
+						<span class="truncate pr-2">${file.name}</span>
+						<span class="text-xs text-slate-400">${formatFileSize(file.size)}</span>
+					`;
+					selectors.uploadFileList.appendChild(item);
+				});
+				updateUploadButtonState();
+			}
+
+			function handleFilesSelected(fileList) {
+				state.uploadFiles = Array.from(fileList || []);
+				renderUploadFileList();
+			}
+
+			function resetUploadModal() {
+				selectors.uploadTagInput.value = '';
+				selectors.uploadFileInput.value = '';
+				state.uploadFiles = [];
+				renderUploadFileList();
+			}
+
+			function openUploadModal() {
+				resetUploadModal();
+				selectors.uploadModal.classList.remove('hidden');
+				document.body.classList.add('overflow-hidden');
+			}
+
+			function closeUploadModal() {
+				selectors.uploadModal.classList.add('hidden');
+				document.body.classList.remove('overflow-hidden');
+			}
+
+			selectors.newChatBtn.addEventListener('click', createNewChat);
+			selectors.sendBtn.addEventListener('click', handleSendMessage);
+			selectors.refreshTagsBtn.addEventListener('click', fetchRagTags);
+
+			selectors.openUploadModalBtn.addEventListener('click', openUploadModal);
+			selectors.closeUploadModalBtn.addEventListener('click', () => {
+				closeUploadModal();
+				resetUploadModal();
+			});
+			selectors.cancelUploadBtn.addEventListener('click', (event) => {
+				event.preventDefault();
+				closeUploadModal();
+				resetUploadModal();
+			});
+			selectors.uploadModal.addEventListener('click', (event) => {
+				if (event.target === selectors.uploadModal) {
+					closeUploadModal();
+					resetUploadModal();
+				}
+			});
+			selectors.uploadTagInput.addEventListener('input', updateUploadButtonState);
+			selectors.uploadDropzone.addEventListener('click', () => selectors.uploadFileInput.click());
+			selectors.uploadFileInput.addEventListener('change', (event) => handleFilesSelected(event.target.files));
+			selectors.uploadDropzone.addEventListener('dragover', (event) => {
+				event.preventDefault();
+				selectors.uploadDropzone.classList.add('border-primary-400', 'bg-primary-50');
+			});
+			selectors.uploadDropzone.addEventListener('dragleave', (event) => {
+				event.preventDefault();
+				selectors.uploadDropzone.classList.remove('border-primary-400', 'bg-primary-50');
+			});
+			selectors.uploadDropzone.addEventListener('drop', (event) => {
+				event.preventDefault();
+				selectors.uploadDropzone.classList.remove('border-primary-400', 'bg-primary-50');
+				const incomingFiles = Array.from(event.dataTransfer?.files || []);
+				if (!incomingFiles.length) return;
+				if (typeof DataTransfer !== 'undefined') {
+					const dataTransfer = new DataTransfer();
+					incomingFiles.forEach((file) => dataTransfer.items.add(file));
+					selectors.uploadFileInput.files = dataTransfer.files;
+				}
+				handleFilesSelected(selectors.uploadFileInput.files?.length ? selectors.uploadFileInput.files : incomingFiles);
+			});
+			selectors.startUploadBtn.addEventListener('click', uploadFiles);
+
+			selectors.chatListToggle.addEventListener('click', () => {
+				const hidden = selectors.chatListSection.classList.toggle('hidden');
+				selectors.chatListToggleIcon.style.transform = hidden ? 'rotate(180deg)' : 'rotate(0deg)';
+			});
+
+			selectors.messageInput.addEventListener('keydown', (event) => {
+				if (event.key === 'ArrowUp') {
+					if (event.target.selectionStart === 0 && event.target.selectionEnd === 0) {
+						event.preventDefault();
+						navigateHistory(-1);
+					}
+					return;
+				}
+				if (event.key === 'ArrowDown') {
+					const value = event.target.value || '';
+					if (event.target.selectionStart === value.length && event.target.selectionEnd === value.length) {
+						event.preventDefault();
+						navigateHistory(1);
+					}
+					return;
+				}
+
+				if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+					event.preventDefault();
+					handleSendMessage();
+				} else if (event.key === 'Enter' && !event.shiftKey && !event.ctrlKey && !event.metaKey) {
+					event.preventDefault();
+					handleSendMessage();
+				}
+			});
+
+			selectors.messageInput.addEventListener('input', autoResizeTextarea);
+			selectors.messagesContainer.addEventListener('scroll', () => {
+				state.autoScroll = isNearBottom();
+			});
+
+			window.addEventListener('beforeunload', () => closeStream());
+
+			document.addEventListener('click', (event) => {
+				if (!event.target.closest('.chat-item')) {
+					closeAllMenus();
+				}
+			});
+
+			document.addEventListener('keydown', (event) => {
+				if (event.key === 'Escape' && !selectors.uploadModal.classList.contains('hidden')) {
+					closeUploadModal();
+					resetUploadModal();
+				}
+			});
+
+			fetchRagTags();
+			createNewChat();
+			autoResizeTextarea();
+			renderUploadFileList();
+		});
+	</script>
+</body>
+
+</html>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://www.zhazhabear.site/downloads/OllamaRAGInterface.html" title="" target="_blank" rel="external">https://www.zhazhabear.site/downloads/OllamaRAGInterface.html</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/zhazha-xiong" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/zhazha-xiong" target="_blank"><span class="text-dark">渣渣熊</span><small class="ml-1x"></small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/zhazha-xiong" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+
+   <!-- 注释掉评论系统脚本 -->
+   
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js"></script>
+<script>
+  // 初始化mermaid
+  if (typeof mermaid !== 'undefined') {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      securityLevel: 'loose'
+    });
+  }
+</script>
+</body>
+</html>
