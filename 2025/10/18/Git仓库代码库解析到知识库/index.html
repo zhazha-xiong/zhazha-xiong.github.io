@@ -18,12 +18,12 @@
   
   
   <title>Git仓库代码库解析到知识库 | 渣渣熊窝</title>
-  <meta name="description" content="本节需求  对知识库的解析进行扩展，增加Git仓库解析。用户填写Git仓库地址和账密，即可拉取代码并上传到知识库。  功能实现 1. 工程结构 123456789101112131415ai-rag-knowledge&#x2F;├── xfg-dev-tech-api&#x2F;          # API 接口层（服务契约）│   ├── IRAGService.java       # RAG 服务接口定义│">
+  <meta name="description" content="本节需求 对知识库的解析进行扩展，增加Git仓库解析。用户填写Git仓库地址和账密，即可拉取代码并上传到知识库。  功能实现1. 工程结构123456789101112131415ai-rag-knowledge&#x2F;├── xfg-dev-tech-api&#x2F;          # API 接口层（服务契约）│   ├── IRAGService.java       # RAG 服务接口定义│">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git仓库代码库解析到知识库">
 <meta property="og:url" content="https://www.zhazhabear.site/2025/10/18/Git%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81%E5%BA%93%E8%A7%A3%E6%9E%90%E5%88%B0%E7%9F%A5%E8%AF%86%E5%BA%93/index.html">
 <meta property="og:site_name" content="渣渣熊窝">
-<meta property="og:description" content="本节需求  对知识库的解析进行扩展，增加Git仓库解析。用户填写Git仓库地址和账密，即可拉取代码并上传到知识库。  功能实现 1. 工程结构 123456789101112131415ai-rag-knowledge&#x2F;├── xfg-dev-tech-api&#x2F;          # API 接口层（服务契约）│   ├── IRAGService.java       # RAG 服务接口定义│">
+<meta property="og:description" content="本节需求 对知识库的解析进行扩展，增加Git仓库解析。用户填写Git仓库地址和账密，即可拉取代码并上传到知识库。  功能实现1. 工程结构123456789101112131415ai-rag-knowledge&#x2F;├── xfg-dev-tech-api&#x2F;          # API 接口层（服务契约）│   ├── IRAGService.java       # RAG 服务接口定义│">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.zhazhabear.site/2025/10/18/Git%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81%E5%BA%93%E8%A7%A3%E6%9E%90%E5%88%B0%E7%9F%A5%E8%AF%86%E5%BA%93/image.png">
 <meta property="og:image" content="https://www.zhazhabear.site/2025/10/18/Git%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81%E5%BA%93%E8%A7%A3%E6%9E%90%E5%88%B0%E7%9F%A5%E8%AF%86%E5%BA%93/image-2.png">
@@ -197,7 +197,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E5%9E%8B%E6%94%AF%E4%BB%98%E5%95%86%E5%9F%8E%E5%AD%A6%E4%B9%A0/">小型支付商城学习</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E5%9E%8B%E6%94%AF%E4%BB%98%E5%95%86%E5%9F%8E%E5%AD%A6%E4%B9%A0/">小型支付商城学习</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%BC%E5%AE%9E%E9%AA%8C/">网综实验</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -207,7 +207,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Natapp/" rel="tag">Natapp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ollama/" rel="tag">Ollama</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Portainer/" rel="tag">Portainer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/" rel="tag">PostgreSQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAG/" rel="tag">RAG</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-ai/" rel="tag">Spring ai</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postgreSQL/" rel="tag">postgreSQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/" rel="tag">前端页面</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" rel="tag">后端开发</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95/" rel="tag">微信登录</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%B2%99%E7%AE%B1/" rel="tag">支付宝沙箱</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" rel="tag">项目学习</a><span class="tag-list-count">10</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DHCPv6/" rel="tag">DHCPv6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IPv6/" rel="tag">IPv6</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Natapp/" rel="tag">Natapp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSPFv3/" rel="tag">OSPFv3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ollama/" rel="tag">Ollama</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Portainer/" rel="tag">Portainer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/" rel="tag">PostgreSQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAG/" rel="tag">RAG</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RIPNG/" rel="tag">RIPNG</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SLAAC/" rel="tag">SLAAC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-ai/" rel="tag">Spring ai</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eNSP/" rel="tag">eNSP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postgreSQL/" rel="tag">postgreSQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/" rel="tag">交换机</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/" rel="tag">前端页面</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" rel="tag">后端开发</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95/" rel="tag">微信登录</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%B2%99%E7%AE%B1/" rel="tag">支付宝沙箱</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag">路由器</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1/" rel="tag">静态路由</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" rel="tag">项目学习</a><span class="tag-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -217,7 +217,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/Docker/" style="font-size: 13.17px;">Docker</a> <a href="/tags/Natapp/" style="font-size: 13px;">Natapp</a> <a href="/tags/Ollama/" style="font-size: 13.33px;">Ollama</a> <a href="/tags/Portainer/" style="font-size: 13px;">Portainer</a> <a href="/tags/PostgreSQL/" style="font-size: 13px;">PostgreSQL</a> <a href="/tags/RAG/" style="font-size: 13.5px;">RAG</a> <a href="/tags/Spring-ai/" style="font-size: 13.67px;">Spring ai</a> <a href="/tags/postgreSQL/" style="font-size: 13px;">postgreSQL</a> <a href="/tags/redis/" style="font-size: 13px;">redis</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/" style="font-size: 13.17px;">前端页面</a> <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 13.83px;">后端开发</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95/" style="font-size: 13px;">微信登录</a> <a href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%B2%99%E7%AE%B1/" style="font-size: 13px;">支付宝沙箱</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 13px;">运维</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" style="font-size: 14px;">项目学习</a>
+      <a href="/tags/DHCPv6/" style="font-size: 13px;">DHCPv6</a> <a href="/tags/Docker/" style="font-size: 13.17px;">Docker</a> <a href="/tags/IPv6/" style="font-size: 13.33px;">IPv6</a> <a href="/tags/Natapp/" style="font-size: 13px;">Natapp</a> <a href="/tags/OSPFv3/" style="font-size: 13px;">OSPFv3</a> <a href="/tags/Ollama/" style="font-size: 13.33px;">Ollama</a> <a href="/tags/Portainer/" style="font-size: 13px;">Portainer</a> <a href="/tags/PostgreSQL/" style="font-size: 13px;">PostgreSQL</a> <a href="/tags/RAG/" style="font-size: 13.5px;">RAG</a> <a href="/tags/RIPNG/" style="font-size: 13px;">RIPNG</a> <a href="/tags/SLAAC/" style="font-size: 13px;">SLAAC</a> <a href="/tags/Spring-ai/" style="font-size: 13.67px;">Spring ai</a> <a href="/tags/eNSP/" style="font-size: 13.33px;">eNSP</a> <a href="/tags/postgreSQL/" style="font-size: 13px;">postgreSQL</a> <a href="/tags/redis/" style="font-size: 13px;">redis</a> <a href="/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/" style="font-size: 13.17px;">交换机</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/" style="font-size: 13.17px;">前端页面</a> <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 13.83px;">后端开发</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95/" style="font-size: 13px;">微信登录</a> <a href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%B2%99%E7%AE%B1/" style="font-size: 13px;">支付宝沙箱</a> <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" style="font-size: 13.17px;">路由器</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 13px;">运维</a> <a href="/tags/%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1/" style="font-size: 13.17px;">静态路由</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" style="font-size: 14px;">项目学习</a>
     </div>
   </div>
 
@@ -226,7 +226,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -238,6 +238,51 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%BD%91%E7%BB%BC%E5%AE%9E%E9%AA%8C/">网综实验</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/10/30/eNSP_IPv6%E5%8A%A8%E6%80%81IP%E5%88%86%E9%85%8D%E5%AE%9E%E9%AA%8C/" class="title">eNSP IPv6动态IP分配实验</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-10-29T16:00:00.000Z" itemprop="datePublished">2025-10-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%BD%91%E7%BB%BC%E5%AE%9E%E9%AA%8C/">网综实验</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/10/30/eNSP_IPv6%E7%BB%BC%E5%90%88%E5%AE%9E%E9%AA%8C/" class="title">eNSP IPv6综合实验</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-10-29T16:00:00.000Z" itemprop="datePublished">2025-10-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%BD%91%E7%BB%BC%E5%AE%9E%E9%AA%8C/">网综实验</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/10/30/eNSP_IPv6%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%9E%E9%AA%8C/" class="title">eNSP IPv6交换机</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-10-29T16:00:00.000Z" itemprop="datePublished">2025-10-30</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -264,51 +309,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2025-10-18T11:23:00.000Z" itemprop="datePublished">2025-10-18</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a>
-              </p>
-              <p class="item-title">
-                <a href="/2025/10/18/OllamaRAG%E7%9F%A5%E8%AF%86%E5%BA%93%E6%8E%A5%E5%8F%A3%E6%9C%8D%E5%8A%A1%E5%AE%9E%E7%8E%B0/" class="title">Ollama RAG 知识库接口服务实现</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2025-10-18T06:33:00.000Z" itemprop="datePublished">2025-10-18</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a>
-              </p>
-              <p class="item-title">
-                <a href="/2025/10/18/OllamaRAG%E7%9F%A5%E8%AF%86%E5%BA%93%E4%B8%8A%E4%BC%A0%E3%80%81%E8%A7%A3%E6%9E%90%E5%92%8C%E9%AA%8C%E8%AF%81/" class="title">Ollama RAG 知识库上传、解析和验证</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2025-10-18T06:16:00.000Z" itemprop="datePublished">2025-10-18</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/AI-Agent%E5%AD%A6%E4%B9%A0/">AI Agent学习</a>
-              </p>
-              <p class="item-title">
-                <a href="/2025/10/15/Ollama%E6%B5%81%E5%BC%8F%E5%BA%94%E7%AD%94%E6%8E%A5%E5%8F%A3%E9%A1%B5%E9%9D%A2%E5%AF%B9%E6%8E%A5/" class="title">Ollama流式应答接口页面对接</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2025-10-15T11:31:00.000Z" itemprop="datePublished">2025-10-15</time>
               </p>
             </div>
           </li>
@@ -366,22 +366,20 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="本节需求">本节需求</h2>
-<blockquote>
+        <h2 id="本节需求"><a href="#本节需求" class="headerlink" title="本节需求"></a>本节需求</h2><blockquote>
 <p>对知识库的解析进行扩展，增加Git仓库解析。用户填写Git仓库地址和账密，即可拉取代码并上传到知识库。</p>
 </blockquote>
-<h2 id="功能实现">功能实现</h2>
-<h3 id="1-工程结构">1. 工程结构</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ai-rag-knowledge/</span><br><span class="line">├── xfg-dev-tech-api/          # API 接口层（服务契约）</span><br><span class="line">│   ├── IRAGService.java       # RAG 服务接口定义</span><br><span class="line">│   └── IAiService.java        # AI 服务接口定义</span><br><span class="line">├── xfg-dev-tech-app/          # 应用层（启动 + 基础设施装配）</span><br><span class="line">│   ├── Application.java       # Spring Boot 启动类</span><br><span class="line">│   ├── config/</span><br><span class="line">│   │   ├── OllamaConfig.java</span><br><span class="line">│   │   ├── RedisClientConfig.java</span><br><span class="line">│   │   └── RedisClientConfigProperties.java</span><br><span class="line">│   └── test/</span><br><span class="line">│       └── RagPipelineTest.java  # 单元测试</span><br><span class="line">└── xfg-dev-tech-trigger/      # 触发器层（对外接口）</span><br><span class="line">    ├── OllamaController.java  # Ollama HTTP控制器</span><br><span class="line">    └── RAGController.java     # RAG HTTP控制器</span><br></pre></td></tr></table></figure>
-<h3 id="2-代码实现">2. 代码实现</h3>
-<p>在<code>IRAGService.java</code>中新增方法：</p>
+<h2 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h2><h3 id="1-工程结构"><a href="#1-工程结构" class="headerlink" title="1. 工程结构"></a>1. 工程结构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ai-rag-knowledge/</span><br><span class="line">├── xfg-dev-tech-api/          # API 接口层（服务契约）</span><br><span class="line">│   ├── IRAGService.java       # RAG 服务接口定义</span><br><span class="line">│   └── IAiService.java        # AI 服务接口定义</span><br><span class="line">├── xfg-dev-tech-app/          # 应用层（启动 + 基础设施装配）</span><br><span class="line">│   ├── Application.java       # Spring Boot 启动类</span><br><span class="line">│   ├── config/</span><br><span class="line">│   │   ├── OllamaConfig.java</span><br><span class="line">│   │   ├── RedisClientConfig.java</span><br><span class="line">│   │   └── RedisClientConfigProperties.java</span><br><span class="line">│   └── test/</span><br><span class="line">│       └── RagPipelineTest.java  # 单元测试</span><br><span class="line">└── xfg-dev-tech-trigger/      # 触发器层（对外接口）</span><br><span class="line">    ├── OllamaController.java  # Ollama HTTP控制器</span><br><span class="line">    └── RAGController.java     # RAG HTTP控制器</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2. 代码实现"></a>2. 代码实现</h3><p>在<code>IRAGService.java</code>中新增方法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Response&lt;String&gt; <span class="title function_">analyzeGitRepository</span><span class="params">(String repoUrl, String userName, String token)</span> <span class="keyword">throws</span> Exception;</span><br></pre></td></tr></table></figure>
 <p>这是一个POST接口，用于克隆Git仓库、解析其中的文件内容，并将解析后的文本存储到向量数据库中。</p>
 <p>同时在<code>RAGController.java</code>中实现该方法，下面是该方法的实现以及解析：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(value = &quot;analyze_git_repository&quot;, method = RequestMethod.POST)</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Response&lt;String&gt; <span class="title function_">analyzeGitRepository</span><span class="params">(<span class="meta">@RequestParam</span> String repoUrl, <span class="meta">@RequestParam</span> String userName, <span class="meta">@RequestParam</span> String token)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">localPath</span> <span class="operator">=</span> <span class="string">&quot;./git-cloned-repo&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">repoProjectName</span> <span class="operator">=</span> extractProjectName(repoUrl);</span><br><span class="line">        log.info(<span class="string">&quot;克隆路径：&#123;&#125;&quot;</span>, <span class="keyword">new</span> <span class="title class_">File</span>(localPath).getAbsolutePath());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 清理旧目录</span></span><br><span class="line">        FileUtils.deleteDirectory(<span class="keyword">new</span> <span class="title class_">File</span>(localPath));</span><br><span class="line"></span><br><span class="line">        <span class="type">Git</span> <span class="variable">git</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 2. Git克隆仓库</span></span><br><span class="line">            git = Git.cloneRepository()</span><br><span class="line">                    .setURI(repoUrl)</span><br><span class="line">                    .setDirectory(<span class="keyword">new</span> <span class="title class_">File</span>(localPath))</span><br><span class="line">                    .setCredentialsProvider(<span class="keyword">new</span> <span class="title class_">UsernamePasswordCredentialsProvider</span>(userName, token))</span><br><span class="line">                    .call();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 3. 文件的遍历与解析</span></span><br><span class="line">            Files.walkFileTree(Paths.get(localPath), <span class="keyword">new</span> <span class="title class_">SimpleFileVisitor</span>&lt;&gt;() &#123;</span><br><span class="line">                <span class="meta">@Nonnull</span></span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="keyword">public</span> FileVisitResult <span class="title function_">preVisitDirectory</span><span class="params">(Path dir, <span class="meta">@Nonnull</span> BasicFileAttributes attrs)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">                    <span class="comment">// 跳过.git目录，避免处理Git内部文件</span></span><br><span class="line">                    <span class="keyword">if</span> (<span class="string">&quot;.git&quot;</span>.equals(dir.getFileName().toString())) &#123;</span><br><span class="line">                        <span class="keyword">return</span> FileVisitResult.SKIP_SUBTREE;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">return</span> FileVisitResult.CONTINUE;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="meta">@Nonnull</span></span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="keyword">public</span> FileVisitResult <span class="title function_">visitFile</span><span class="params">(Path file, <span class="meta">@Nonnull</span> BasicFileAttributes attrs)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">                    <span class="comment">// 跳过Git相关文件</span></span><br><span class="line">                    <span class="keyword">if</span> (file.toString().contains(<span class="string">&quot;.git&quot;</span>)) &#123;</span><br><span class="line">                        <span class="keyword">return</span> FileVisitResult.CONTINUE;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    log.info(<span class="string">&quot;&#123;&#125; 遍历解析路径，上传知识库:&#123;&#125;&quot;</span>, repoProjectName, file.getFileName());</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        <span class="type">TikaDocumentReader</span> <span class="variable">reader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TikaDocumentReader</span>(<span class="keyword">new</span> <span class="title class_">PathResource</span>(file));</span><br><span class="line">                        List&lt;Document&gt; documents = reader.get();</span><br><span class="line">                        List&lt;Document&gt; documentSplitterList = tokenTextSplitter.apply(documents);</span><br><span class="line"></span><br><span class="line">                        documents.forEach(doc -&gt; doc.getMetadata().put(<span class="string">&quot;knowledge&quot;</span>, repoProjectName));</span><br><span class="line">                        documentSplitterList.forEach(doc -&gt; doc.getMetadata().put(<span class="string">&quot;knowledge&quot;</span>, repoProjectName));</span><br><span class="line"></span><br><span class="line">                        pgVectorStore.accept(documentSplitterList);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                        log.error(<span class="string">&quot;遍历解析路径，上传知识库失败:&#123;&#125;, 错误: &#123;&#125;&quot;</span>, file.getFileName(), e.getMessage());</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">return</span> FileVisitResult.CONTINUE;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="meta">@Nonnull</span></span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="keyword">public</span> FileVisitResult <span class="title function_">visitFileFailed</span><span class="params">(Path file, <span class="meta">@Nonnull</span> IOException exc)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">                    log.error(<span class="string">&quot;Failed to access file: &#123;&#125; - &#123;&#125;&quot;</span>, file.toString(), exc.getMessage());</span><br><span class="line">                    <span class="keyword">return</span> FileVisitResult.CONTINUE;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 4. 更新标签列表</span></span><br><span class="line">            RList&lt;String&gt; elements = redissonClient.getList(<span class="string">&quot;ragTag&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (!elements.contains(repoProjectName)) &#123;</span><br><span class="line">                elements.add(repoProjectName);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            log.info(<span class="string">&quot;遍历解析路径，上传完成:&#123;&#125;&quot;</span>, repoUrl);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> Response.&lt;String&gt;builder().code(<span class="string">&quot;0000&quot;</span>).info(<span class="string">&quot;调用成功&quot;</span>).build();</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="comment">// 确保Git资源被关闭</span></span><br><span class="line">            <span class="keyword">if</span> (git != <span class="literal">null</span>) &#123;</span><br><span class="line">                git.close();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 延迟删除，确保资源释放</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Thread.sleep(<span class="number">1000</span>); <span class="comment">// 等待1秒确保资源释放</span></span><br><span class="line">                FileUtils.deleteDirectory(<span class="keyword">new</span> <span class="title class_">File</span>(localPath));</span><br><span class="line">                log.info(<span class="string">&quot;成功清理临时目录: &#123;&#125;&quot;</span>, localPath);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                log.warn(<span class="string">&quot;清理临时目录失败: &#123;&#125;, 错误: &#123;&#125;&quot;</span>, localPath, e.getMessage());</span><br><span class="line">                <span class="comment">// 不抛出异常，避免影响主要业务流程</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 从Git仓库URL中提取项目名称</span></span><br><span class="line">    <span class="keyword">private</span> String <span class="title function_">extractProjectName</span><span class="params">(String repoUrl)</span> &#123;</span><br><span class="line">        String[] parts = repoUrl.split(<span class="string">&quot;/&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">projectNameWithGit</span> <span class="operator">=</span> parts[parts.length - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">return</span> projectNameWithGit.replace(<span class="string">&quot;.git&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="功能测试">功能测试</h2>
-<p>使用Apifox进行接口测试：</p>
+
+<h2 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h2><p>使用Apifox进行接口测试：</p>
 <img src="/2025/10/18/Git%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81%E5%BA%93%E8%A7%A3%E6%9E%90%E5%88%B0%E7%9F%A5%E8%AF%86%E5%BA%93/image.png" class title="alt text">
+
 <p>这里我先用DBeaver连接postgreSQL查看数据库的记录：</p>
 <img src="/2025/10/18/Git%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81%E5%BA%93%E8%A7%A3%E6%9E%90%E5%88%B0%E7%9F%A5%E8%AF%86%E5%BA%93/image-2.png" class title="alt text">
 <p>可以看到我们git仓库的内容已经正确记录在数据库中</p>
@@ -441,6 +439,10 @@
   <div class="bar-inner">
   
   <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2025/10/30/eNSP_IPv6%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%9E%E9%AA%8C/" title="eNSP IPv6交换机"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
     
     
     <li class="next">
