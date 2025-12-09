@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>京东日常实习后端一面记录 | 渣渣熊窝</title>
+  <meta name="description" content="没有自我介绍环节，全程项目拷打 拼团项目1. 介绍一下拼团项目邻家鲜团是一个以社区拼团为基础的自营型电商平台。具体来说：平台聚焦于线下社区，以生鲜和日用品这些高频、刚需品切入。在社区关系链的基础上，我们引入了社交拼团功能。用户可以作为团长发起拼单，邀请好友参与，也可以作为团员加入其他人的拼团。通过拼团购买，用户可以获得更优惠的价格。这不仅仅通过价格激励提供了商品的销量和转换率，更重要的是，它利用熟">
+<meta property="og:type" content="article">
+<meta property="og:title" content="京东日常实习后端一面记录">
+<meta property="og:url" content="https://www.zhazhabear.site/2025/11/26/%E4%BA%AC%E4%B8%9C%E6%97%A5%E5%B8%B8%E5%AE%9E%E4%B9%A0%E4%B8%80%E9%9D%A2/index.html">
+<meta property="og:site_name" content="渣渣熊窝">
+<meta property="og:description" content="没有自我介绍环节，全程项目拷打 拼团项目1. 介绍一下拼团项目邻家鲜团是一个以社区拼团为基础的自营型电商平台。具体来说：平台聚焦于线下社区，以生鲜和日用品这些高频、刚需品切入。在社区关系链的基础上，我们引入了社交拼团功能。用户可以作为团长发起拼单，邀请好友参与，也可以作为团员加入其他人的拼团。通过拼团购买，用户可以获得更优惠的价格。这不仅仅通过价格激励提供了商品的销量和转换率，更重要的是，它利用熟">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-08T05:51:37.937Z">
+<meta property="article:author" content="zzbear">
+<meta property="article:tag" content="京东">
+<meta property="article:tag" content="后端开发">
+<meta property="article:tag" content="面经">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.zhazhabear.site/2025/11/26/%E4%BA%AC%E4%B8%9C%E6%97%A5%E5%B8%B8%E5%AE%9E%E4%B9%A0%E4%B8%80%E9%9D%A2/index.html">
+  
+  
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/zhazha-xiong" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">渣渣熊</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Dalian, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository/">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/zhazha-xiong" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%AC%E4%B8%9C/" rel="tag">京东</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" rel="tag">后端开发</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/" rel="tag">字节跳动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E7%BA%A2%E4%B9%A6/" rel="tag">小红书</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%AB%E6%89%8B/" rel="tag">快手</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/" rel="tag">游戏服务器开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E6%98%93/" rel="tag">网易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%9B%A2/" rel="tag">美团</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a><span class="tag-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/%E4%BA%AC%E4%B8%9C/" style="font-size: 13px;">京东</a> <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 13.5px;">后端开发</a> <a href="/tags/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/" style="font-size: 13px;">字节跳动</a> <a href="/tags/%E5%B0%8F%E7%BA%A2%E4%B9%A6/" style="font-size: 13px;">小红书</a> <a href="/tags/%E5%BF%AB%E6%89%8B/" style="font-size: 13px;">快手</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/" style="font-size: 13px;">游戏服务器开发</a> <a href="/tags/%E7%BD%91%E6%98%93/" style="font-size: 13px;">网易</a> <a href="/tags/%E7%BE%8E%E5%9B%A2/" style="font-size: 13px;">美团</a> <a href="/tags/%E9%9D%A2%E7%BB%8F/" style="font-size: 14px;">面经</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">十二月 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/12/08/%E5%BF%AB%E6%89%8B%E6%97%A5%E5%B8%B8%E5%AE%9E%E4%B9%A0%E4%B8%80%E9%9D%A2/" class="title">快手日常实习后端一面记录</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-12-08T06:00:00.000Z" itemprop="datePublished">2025-12-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/12/01/%E7%BD%91%E6%98%93%E6%97%A5%E5%B8%B8%E5%AE%9E%E4%B9%A0%E4%B8%80%E9%9D%A2/" class="title">网易日常实习游戏服务器一面记录</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-12-01T11:30:00.000Z" itemprop="datePublished">2025-12-01</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/12/01/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%97%A5%E5%B8%B8%E5%AE%9E%E4%B9%A0%E4%B8%80%E9%9D%A2/" class="title">字节跳动日常实习后端一面记录</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-11-30T16:00:00.000Z" itemprop="datePublished">2025-12-01</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/11/26/%E4%BA%AC%E4%B8%9C%E6%97%A5%E5%B8%B8%E5%AE%9E%E4%B9%A0%E4%B8%80%E9%9D%A2/" class="title">京东日常实习后端一面记录</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-11-25T16:00:00.000Z" itemprop="datePublished">2025-11-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/11/26/%E7%BE%8E%E5%9B%A2%E6%97%A5%E5%B8%B8%E5%AE%9E%E4%B9%A0%E4%B8%80%E9%9D%A2/" class="title">美团日常实习后端一面记录</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-11-25T16:00:00.000Z" itemprop="datePublished">2025-11-26</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-京东日常实习一面" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      京东日常实习后端一面记录
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/11/26/%E4%BA%AC%E4%B8%9C%E6%97%A5%E5%B8%B8%E5%AE%9E%E4%B9%A0%E4%B8%80%E9%9D%A2/" class="article-date">
+	  <time datetime="2025-11-25T16:00:00.000Z" itemprop="datePublished">2025-11-26</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E4%BA%AC%E4%B8%9C/" rel="tag">京东</a>, <a class="article-tag-link-link" href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" rel="tag">后端开发</a>, <a class="article-tag-link-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/11/26/%E4%BA%AC%E4%B8%9C%E6%97%A5%E5%B8%B8%E5%AE%9E%E4%B9%A0%E4%B8%80%E9%9D%A2/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>没有自我介绍环节，全程项目拷打</p>
+<h3 id="拼团项目"><a href="#拼团项目" class="headerlink" title="拼团项目"></a>拼团项目</h3><h4 id="1-介绍一下拼团项目"><a href="#1-介绍一下拼团项目" class="headerlink" title="1. 介绍一下拼团项目"></a>1. 介绍一下拼团项目</h4><p>邻家鲜团是一个以社区拼团为基础的自营型电商平台。具体来说：<br>平台聚焦于线下社区，以生鲜和日用品这些高频、刚需品切入。在社区关系链的基础上，我们引入了社交拼团功能。用户可以作为团长发起拼单，邀请好友参与，也可以作为团员加入其他人的拼团。通过拼团购买，用户可以获得更优惠的价格。<br>这不仅仅通过价格激励提供了商品的销量和转换率，更重要的是，它利用熟人之间的信任关系，实现了低成本的社交裂变与用户增长。将一次性的交易行为转变为了基于社交互动的持续性消费。</p>
+<h4 id="2-为什么要用拼团，和普通购买有什么区别"><a href="#2-为什么要用拼团，和普通购买有什么区别" class="headerlink" title="2. 为什么要用拼团，和普通购买有什么区别"></a>2. 为什么要用拼团，和普通购买有什么区别</h4><p>见1</p>
+<h4 id="3-比如购买手机，很难拼团成功，你是怎么考虑的"><a href="#3-比如购买手机，很难拼团成功，你是怎么考虑的" class="headerlink" title="3. 比如购买手机，很难拼团成功，你是怎么考虑的"></a>3. 比如购买手机，很难拼团成功，你是怎么考虑的</h4><p>见1</p>
+<h4 id="4-拼团怎么邀请好友"><a href="#4-拼团怎么邀请好友" class="headerlink" title="4. 拼团怎么邀请好友"></a>4. 拼团怎么邀请好友</h4><ol>
+<li>生成链接：当用户发起拼团（开团）成功后，前端会根据返回的 teamId（队伍ID）和 activityId（活动ID）生成一个唯一的分享链接。</li>
+<li>分享渠道：用户通过微信、朋友圈等社交渠道将链接发送给好友。</li>
+<li>后端支持：后端提供了用于查询当前拼团的进度的接口，实时返回当前拼团的已拼人数和剩余名额。</li>
+</ol>
+<h4 id="5-好友打开拼团链接能看到什么"><a href="#5-好友打开拼团链接能看到什么" class="headerlink" title="5. 好友打开拼团链接能看到什么"></a>5. 好友打开拼团链接能看到什么</h4><p>好友点击链接后，前端会调用后端的查询接口，展示以下信息：</p>
+<ul>
+<li>商品信息：商品图片、拼团优惠价、原价。</li>
+<li>拼团状态：<ul>
+<li>进度条：当前人数&#x2F;目标人数</li>
+<li>倒计时：显示拼团的剩余时间</li>
+</ul>
+</li>
+<li>操作按钮：<ul>
+<li>如果未满员且未过期：显示“立即加入拼团”。</li>
+<li>如果已满员：显示“该团已满，我来开个团”。</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-假如好友点拼团链接，但是只是浏览没组队，会发生什么"><a href="#6-假如好友点拼团链接，但是只是浏览没组队，会发生什么" class="headerlink" title="6. 假如好友点拼团链接，但是只是浏览没组队，会发生什么"></a>6. 假如好友点拼团链接，但是只是浏览没组队，会发生什么</h4><ul>
+<li>无状态浏览：在后端层面，单纯的浏览请求是无状态的查询，不会对数据库中的订单表产生任何写操作，也不会占用库存。</li>
+<li>但是为了后续分析转化率，目前项目采用redis的hyperLogLog来记录每一个队伍有多少人浏览，以及每个活动有多少人浏览，这些数据可以用作分析活动的转换率和团长的传播能力。</li>
+</ul>
+<h4 id="7-讲一下项目中用到的Redis原子预占与数据库乐观锁的多级防超卖机制"><a href="#7-讲一下项目中用到的Redis原子预占与数据库乐观锁的多级防超卖机制" class="headerlink" title="7. 讲一下项目中用到的Redis原子预占与数据库乐观锁的多级防超卖机制"></a>7. 讲一下项目中用到的<code>Redis原子预占与数据库乐观锁的多级防超卖机制</code></h4><p>首先，在缓存层面，我们利用 Redis 的原子自增命令实现了一个“全局叫号机”。每个尝试参与拼团的用户都会先去取一个号。由于 Redis 单线程执行命令的特性，我们不需要加锁就能保证每个用户拿到的号码是唯一且递增的。</p>
+<p>其次，为了处理<strong>拿到号但后续业务失败</strong>的情况，我们引入了<strong>错误恢复量</strong>机制。每当有请求在后续流程失败，我们不是去回滚叫号机，而是将<strong>错误恢复量</strong>加 1。<br>判断逻辑是：只有当用户号码 &lt;&#x3D; 拼团目标 + 错误恢复量 时，才允许进入数据库层。这相当于动态扩大了准入窗口，补上了之前失败留下的空缺。</p>
+<p>此外，当高并发流量瞬间涌入时，Redis 的叫号机可能会瞬间冲得很高。此时，虽然多余的请求被拦截了，但叫号机的值已经远超目标值。我们会选择通过CAS回滚叫号机的号码为target，这样剩余的组队人数就是错误恢复量，来避免有无法利用的空位。</p>
+<p>最后，在数据库层面，对于通过了 Redis 校验的请求，我们利用 MySQL 的乐观锁（UPDATE … WHERE lock_count &lt; target）进行最终的库存扣减。数据库的行锁机制会强制串行化并发的更新操作，确保绝对不会发生超卖。</p>
+<p>这种<strong>Redis 挡住绝大部分流量 + 数据库兜底最终一致性</strong>的多级防护架构，既保证了高性能，又确保了数据安全。</p>
+<h4 id="8-假如多个用户同时点击拼团按钮会发生什么"><a href="#8-假如多个用户同时点击拼团按钮会发生什么" class="headerlink" title="8. 假如多个用户同时点击拼团按钮会发生什么"></a>8. 假如多个用户同时点击拼团按钮会发生什么</h4><ul>
+<li>并发请求：假设目标是 5 人团，当前有 3 人，瞬间来了 10 个请求。</li>
+<li>Redis 层：10 个请求同时执行 INCR，Redis 会依次返回 4, 5, 6, … 13。</li>
+<li>拿到 4, 5 的请求：通过校验，进入下一步。</li>
+<li>拿到 6-13 的请求：occupy &gt; target 判断为 true，直接返回失败（提示“手慢了”），不会访问数据库，并且将叫号重置为5。</li>
+<li>DB 层：拿到 4, 5 的两个请求并发执行 UPDATE SQL。数据库会串行化这两个更新操作，确保 lock_count 正确增加。</li>
+</ul>
+<h4 id="9-数据库兜底怎么做的"><a href="#9-数据库兜底怎么做的" class="headerlink" title="9. 数据库兜底怎么做的"></a>9. 数据库兜底怎么做的</h4><ol>
+<li>如果 Redis 放行了多余请求（例如 Redis 数据丢失），数据库更新条件 <code>lock_count &lt; target_count</code> 会导致更新失败，从而拦截超卖。</li>
+<li>唯一索引约束：<br>在<code> group_buy_order_list</code> 表中，<code>order_id</code> 是唯一索引，且 <code>biz_id</code>（由 activityId_userId_count 组成）也是用于幂等控制的。如果同一个用户重复提交，数据库会报 DuplicateKeyException，程序捕获后抛出异常。</li>
+</ol>
+<h4 id="10-数据库的行锁怎么用的"><a href="#10-数据库的行锁怎么用的" class="headerlink" title="10. 数据库的行锁怎么用的"></a>10. 数据库的行锁怎么用的</h4><p>当执行 <code>UPDATE group_buy_order ... WHERE team_id = ?</code> 时，MySQL 的 InnoDB 引擎会自动给 team_id 对应的这行记录加上 排他锁（X锁）。</p>
+<h4 id="11-数据库给行上独占锁后可以读吗"><a href="#11-数据库给行上独占锁后可以读吗" class="headerlink" title="11. 数据库给行上独占锁后可以读吗"></a>11. 数据库给行上独占锁后可以读吗</h4><p>可以读，但取决于怎么读：</p>
+<ul>
+<li><strong>快照读（Snapshot Read）</strong>：普通的 <code>SELECT * FROM ... </code>可以读。InnoDB 利用 MVCC（多版本并发控制）机制，会读取该行记录在加锁之前的历史版本（快照），不会被阻塞。</li>
+<li><strong>当前读（Current Read）</strong>：<code>SELECT ... FOR UPDATE 或 SELECT ... LOCK IN SHARE MODE </code>不可以读（会被阻塞），必须等待锁释放。</li>
+</ul>
+<h4 id="12-有考虑过Bean的启动顺序吗？假如业务的Bean先起来，但是Redis连接Bean没起来怎么办"><a href="#12-有考虑过Bean的启动顺序吗？假如业务的Bean先起来，但是Redis连接Bean没起来怎么办" class="headerlink" title="12. 有考虑过Bean的启动顺序吗？假如业务的Bean先起来，但是Redis连接Bean没起来怎么办"></a>12. 有考虑过Bean的启动顺序吗？假如业务的Bean先起来，但是Redis连接Bean没起来怎么办</h4><ol>
+<li>可以使用<code>@DependsOn注解</code>明确业务Bean依赖于<code>redis连接的Bean</code></li>
+<li>实际上由于业务Bean显式持有了<code>RedisTemplate</code>有显示的依赖关系，所以Spring会自动处理依赖关系。</li>
+</ol>
+<h3 id="RAG项目"><a href="#RAG项目" class="headerlink" title="RAG项目"></a>RAG项目</h3><h4 id="1-介绍一下RAG"><a href="#1-介绍一下RAG" class="headerlink" title="1. 介绍一下RAG"></a>1. 介绍一下RAG</h4><h4 id="2-讲一下怎么做文本切分的"><a href="#2-讲一下怎么做文本切分的" class="headerlink" title="2. 讲一下怎么做文本切分的"></a>2. 讲一下怎么做文本切分的</h4><h4 id="3-用的什么向量模型"><a href="#3-用的什么向量模型" class="headerlink" title="3. 用的什么向量模型"></a>3. 用的什么向量模型</h4><h4 id="4-向量检索和你这里使用的混合检索的优劣，你有测试过吗？"><a href="#4-向量检索和你这里使用的混合检索的优劣，你有测试过吗？" class="headerlink" title="4. 向量检索和你这里使用的混合检索的优劣，你有测试过吗？"></a>4. 向量检索和你这里使用的混合检索的优劣，你有测试过吗？</h4><h4 id="5-你说你的WebSocket是全双工通信，讲一下全双工是什么意思"><a href="#5-你说你的WebSocket是全双工通信，讲一下全双工是什么意思" class="headerlink" title="5. 你说你的WebSocket是全双工通信，讲一下全双工是什么意思"></a>5. 你说你的WebSocket是全双工通信，讲一下全双工是什么意思</h4><h4 id="6-除了WebSocket你还知道别的全双工通信的方法吗"><a href="#6-除了WebSocket你还知道别的全双工通信的方法吗" class="headerlink" title="6. 除了WebSocket你还知道别的全双工通信的方法吗"></a>6. 除了WebSocket你还知道别的全双工通信的方法吗</h4><h4 id="7-WebSocket你在项目里怎么用的？代码"><a href="#7-WebSocket你在项目里怎么用的？代码" class="headerlink" title="7. WebSocket你在项目里怎么用的？代码"></a>7. WebSocket你在项目里怎么用的？代码</h4><h4 id="8-讲一下为什么你这里需要使用Redis的Bitmap"><a href="#8-讲一下为什么你这里需要使用Redis的Bitmap" class="headerlink" title="8. 讲一下为什么你这里需要使用Redis的Bitmap"></a>8. 讲一下为什么你这里需要使用Redis的Bitmap</h4><h4 id="9-分片在前端做的还是服务端做的"><a href="#9-分片在前端做的还是服务端做的" class="headerlink" title="9. 分片在前端做的还是服务端做的"></a>9. 分片在前端做的还是服务端做的</h4><h4 id="10-为什么要用消息队列"><a href="#10-为什么要用消息队列" class="headerlink" title="10. 为什么要用消息队列"></a>10. 为什么要用消息队列</h4><h4 id="11-服务端怎么判断有没有上传完毕"><a href="#11-服务端怎么判断有没有上传完毕" class="headerlink" title="11. 服务端怎么判断有没有上传完毕"></a>11. 服务端怎么判断有没有上传完毕</h4><h4 id="12-用户能知道他上传的文档进数据库了吗"><a href="#12-用户能知道他上传的文档进数据库了吗" class="headerlink" title="12. 用户能知道他上传的文档进数据库了吗"></a>12. 用户能知道他上传的文档进数据库了吗</h4>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://www.zhazhabear.site/2025/11/26/%E4%BA%AC%E4%B8%9C%E6%97%A5%E5%B8%B8%E5%AE%9E%E4%B9%A0%E4%B8%80%E9%9D%A2/" title="京东日常实习后端一面记录" target="_blank" rel="external">https://www.zhazhabear.site/2025/11/26/京东日常实习一面/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/zhazha-xiong" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/zhazha-xiong" target="_blank"><span class="text-dark">渣渣熊</span><small class="ml-1x"></small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2025/12/01/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%97%A5%E5%B8%B8%E5%AE%9E%E4%B9%A0%E4%B8%80%E9%9D%A2/" title="字节跳动日常实习后端一面记录"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2025/11/26/%E7%BE%8E%E5%9B%A2%E6%97%A5%E5%B8%B8%E5%AE%9E%E4%B9%A0%E4%B8%80%E9%9D%A2/" title="美团日常实习后端一面记录"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/zhazha-xiong" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   <!-- 注释掉评论系统脚本 -->
+   
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js"></script>
+<script>
+  // 初始化mermaid
+  if (typeof mermaid !== 'undefined') {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      securityLevel: 'loose'
+    });
+  }
+</script>
+</body>
+</html>
